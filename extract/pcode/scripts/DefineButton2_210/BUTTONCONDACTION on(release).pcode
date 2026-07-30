@@ -1,0 +1,10 @@
+on(release){
+   Push "try button _ try again", 1, "log"
+   CallFunction
+   Pop
+   Push "game_init", 1, "_parent"
+   GetVariable
+   Push "gotoAndPlay"
+   CallMethod
+   Pop
+}

@@ -1,0 +1,1070 @@
+Jump loc0ea8
+loc0005:ToggleQuality
+StringLess
+CallMethod
+Pop
+Jump loc000e
+loc000e:Push register8, undefined
+Equals2
+Not
+Not
+If loc007e
+Push register8, 1, register1, constant51
+CallMethod
+Pop
+Push 0, register1, constant33
+CallMethod
+Push register9
+Subtract
+Push 0, register1, constant32
+CallMethod
+Push register9
+Subtract
+Push register9, register9, 4, register1, constant52
+CallMethod
+Pop
+Push 0, register1, constant53
+CallMethod
+Pop
+loc007e:SetMember
+Push register2, constant38
+DefineFunction2 "", 6, 10, false, false, true, false, true, false, false, true, false, 9, "c1", 8, "c2", 7, "c3", 6, "c4", 5, "c5", 4, "c6" {
+Push 0, register1, constant32
+CallMethod
+StoreRegister 3
+Pop
+Push 0, register1, constant33
+CallMethod
+StoreRegister 2
+Pop
+Push register9, 1, register1, constant51
+CallMethod
+Pop
+Push register2, register3, 0, 0, 4, register1, constant52
+CallMethod
+Pop
+Push register2, register3, 1
+Subtract
+Push 0, 1, 4, register1, constant52
+CallMethod
+Pop
+Push 0, register1, constant53
+CallMethod
+Pop
+Push register8, 1, register1, constant51
+CallMethod
+Pop
+Push 1, register3, 1
+Subtract
+Push 0, 1, 4, register1, constant52
+CallMethod
+Pop
+Push 0, register1, constant53
+CallMethod
+Pop
+Push register7, 1, register1, constant51
+CallMethod
+Pop
+Push register2, register3, 1
+Subtract
+Push register2, 1
+Subtract
+Push 1, 4, register1, constant52
+CallMethod
+Pop
+Push 0, register1, constant53
+CallMethod
+Pop
+Push register6, 1, register1, constant51
+CallMethod
+Pop
+Push 2, register3, 1
+Subtract
+Push 1, 1, 4, register1, constant52
+CallMethod
+Pop
+Push 0, register1, constant53
+CallMethod
+Pop
+Push register5, 1, register1, constant51
+CallMethod
+Pop
+Push register2, 1
+Subtract
+Push register3, 1
+Subtract
+Push register2, 2
+Subtract
+Push 1, 4, register1, constant52
+CallMethod
+Pop
+Push 0, register1, constant53
+CallMethod
+Pop
+Push register4, 1, register1, constant51
+CallMethod
+Pop
+Push register2, 2
+Subtract
+Push register3, 1
+Subtract
+Push 2, 1, 4, register1, constant52
+CallMethod
+Pop
+Push register2, 2
+Subtract
+Push register3, 2
+Subtract
+Push 2, 2, 4, register1, constant52
+CallMethod
+Pop
+Push 0, register1, constant53
+CallMethod
+Pop
+}
+SetMember
+Push register1, constant54
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, true, false, true {
+Push 0, "{invalid_utf8=179}e"
+GetVariable
+Push constant55
+GetMember
+Push constant56
+GetMember
+Push constant57
+GetMember
+Push constant58
+CallMethod
+Pop
+Push register1, constant21
+GetMember
+Push constant59, "{invalid_utf8=179}e"
+GetVariable
+Push "{invalid_utf8=224} /{invalid_utf8=205}"
+GetMember
+Push constant4
+GetMember
+Push constant5
+GetMember
+SetMember
+Push register1, constant60
+GetMember
+Push constant5, true
+SetMember
+Push true
+Return
+}
+SetMember
+Push register1, constant61, constant5
+SetMember
+Push register1, constant62, "{invalid_utf8=179}e"
+GetVariable
+Push "{invalid_utf8=224} /{invalid_utf8=205}"
+GetMember
+Push constant4
+GetMember
+Push constant5
+GetMember
+SetMember
+Push register1, constant63, constant64
+SetMember
+Push register2, constant30, constant65
+SetMember
+Push register2, constant31, constant66
+SetMember
+Push register2, constant37, constant67, 0, constant68, 0, constant69, 0, constant70, 0, constant65, 0, constant66, 0, 6
+InitObject
+SetMember
+Push register2, constant8, constant26, 0, constant71, 1, constant36, 2, constant39, 2, constant14, 3, constant47, 2, constant49, 2, constant50, 2, 8
+InitObject
+SetMember
+Push register1, constant72, 0, "{invalid_utf8=179}e"
+GetVariable
+Push "{invalid_utf8=224} /{invalid_utf8=205}"
+GetMember
+Push constant4
+GetMember
+Push constant5
+GetMember
+Push constant54
+CallMethod
+SetMember
+Push register1, constant73, "{invalid_utf8=179}e"
+GetVariable
+Push constant55
+GetMember
+Push constant56
+GetMember
+Push constant57
+GetMember
+SetMember
+Push 1, null, "{invalid_utf8=179}e"
+GetVariable
+Push "{invalid_utf8=224} /{invalid_utf8=205}"
+GetMember
+Push constant4
+GetMember
+Push constant5
+GetMember
+Push constant6
+GetMember
+Push 3, constant74
+CallFunction
+Pop
+Jump loc04cf
+loc04cf:Jump loc04d4
+loc04d4:Jump loc1563
+loc04d9:Push "_global"
+GetVariable
+Push "CoinItem"
+GetMember
+Not
+Not
+If loc0e9d
+Push "_global"
+GetVariable
+Push "CoinItem"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "stage" {
+Push register1, "stage", 1, "item", 2, register2, "createEmptyMovieClip"
+CallMethod
+SetMember
+Push register1, "effect", 2, "effect", 2, register2, "createEmptyMovieClip"
+CallMethod
+SetMember
+Push register1, "itemdata", 0, "ItemData"
+NewObject
+SetMember
+Push register1, "itemwait", 0
+InitArray
+SetMember
+Push register1, "itemarr", 0
+InitArray
+SetMember
+Push register1, "boxarr", 0
+InitArray
+SetMember
+Push register1, "parr", 0
+InitArray
+SetMember
+}
+StoreRegister 1
+SetMember
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "addItem"
+DefineFunction2 "", 2, 6, false, false, true, false, true, false, false, true, false, 5, "map", 4, "testitem" {
+Push register1, "itemwait"
+GetMember
+Push "length"
+GetMember
+Push 0
+Greater
+Not
+Not
+If loc071c
+Push 0
+InitArray
+StoreRegister 3
+Pop
+Push register4, undefined
+Equals2
+Not
+Not
+If loc061b
+Push register4
+StoreRegister 3
+Pop
+Jump loc0635
+loc061b:Push register5, 1, register1, "itemdata"
+GetMember
+Push "getItem"
+CallMethod
+StoreRegister 3
+Pop
+loc0635:Push 0
+StoreRegister 2
+Pop
+loc0646:Push register2, register3, "length"
+GetMember
+Less2
+Not
+If loc0683
+Push register3, register2
+GetMember
+Push 1, register1, "itemwait"
+GetMember
+Push "push"
+CallMethod
+Pop
+Push register2
+Increment
+StoreRegister 2
+Pop
+Jump loc0646
+loc0683:Push register1, "pitem"
+GetMember
+Push 8
+Less2
+Not
+If loc06ad
+Push register1, "pitem", register1, "pitem"
+GetMember
+Increment
+SetMember
+Jump loc06be
+loc06ad:Push register1, "pitem", 0
+SetMember
+loc06be:Push register1, "parr"
+GetMember
+Push register1, "pitem"
+GetMember
+Push register3, 1, register1, "getItemNum"
+CallMethod
+SetMember
+Push register1, "parr"
+GetMember
+Push register1, "pitem"
+GetMember
+GetMember
+Push 0
+Greater
+Not
+Not
+If loc071c
+Push register1, "parr"
+GetMember
+Push register1, "pitem"
+GetMember
+Push -1
+SetMember
+}
+loc071c:SetMember
+Push register2, "createItem"
+DefineFunction2 "", 2, 9, false, false, true, false, true, false, false, true, false, 8, "x", 7, "y" {
+Push 0
+InitArray
+StoreRegister 4
+Pop
+Push 0
+InitArray
+StoreRegister 6
+Pop
+Push 0, register1, "itemwait"
+GetMember
+Push "shift"
+CallMethod
+Push 1, register4, "concat"
+CallMethod
+StoreRegister 4
+Pop
+Push register4, "length"
+GetMember
+Push 0
+Greater
+Not
+If loc0952
+Push register1, "depth"
+GetMember
+Push register1, "depth", register1, "depth"
+GetMember
+Increment
+SetMember
+Push "item", register1, "depth"
+GetMember
+Add2
+Push 2, register1, "stage"
+GetMember
+Push "createEmptyMovieClip"
+CallMethod
+StoreRegister 5
+Pop
+Push register5, "_x", register8
+SetMember
+Push register5, "_y", register7
+SetMember
+Push 0
+StoreRegister 2
+Pop
+loc07fb:Push register2, register4, "length"
+GetMember
+Less2
+Not
+If loc091c
+Push register2, "item_", register2
+Add2
+Push "id_item", 3, register5, "attachMovie"
+CallMethod
+StoreRegister 3
+Pop
+Push register4, register2
+GetMember
+Push 100
+Less2
+Not
+If loc0859
+Push 1, 1, register3, "gotoAndStop"
+CallMethod
+Pop
+Jump loc0882
+loc0859:Push 2, 1, register3, "gotoAndStop"
+CallMethod
+Pop
+Push register4, register2, register4, register2
+GetMember
+Push 100
+Subtract
+SetMember
+loc0882:Push register3, "_x", -58.5, register4, register2
+GetMember
+Push 4
+Modulo
+Push 37.5
+Multiply
+Add2
+SetMember
+Push register3, "_y", -480, register4, register2
+GetMember
+Push 4
+Divide
+Push 1, "Math"
+GetVariable
+Push "floor"
+CallMethod
+Push 37
+Multiply
+Add2
+SetMember
+Push register3, "cacheAsBitmap", true
+SetMember
+Push register3, "pitem", register1, "pitem"
+GetMember
+SetMember
+Push register3, 1, register6, "push"
+CallMethod
+Pop
+Push register2
+Increment
+StoreRegister 2
+Pop
+Jump loc07fb
+loc091c:Push register5, "cacheAsBitmap", true
+SetMember
+Push register6, 1, register1, "itemarr"
+GetMember
+Push "push"
+CallMethod
+Pop
+Push register5, 1, register1, "boxarr"
+GetMember
+Push "push"
+CallMethod
+Pop
+}
+loc0952:SetMember
+Push register2, "eatItem"
+DefineFunction2 "", 1, 5, false, false, true, false, true, false, false, true, false, 4, "mc" {
+Push 0
+StoreRegister 3
+Pop
+loc097a:Push register3, register1, "itemarr"
+GetMember
+Push "length"
+GetMember
+Less2
+Not
+If loc0b33
+Push 0
+StoreRegister 2
+Pop
+loc09a2:Push register2, register1, "itemarr"
+GetMember
+Push register3
+GetMember
+Push "length"
+GetMember
+Less2
+Not
+If loc0b23
+Push register1, "itemarr"
+GetMember
+Push register3
+GetMember
+Push register2
+GetMember
+Push 1, register4, "hitTest"
+CallMethod
+Not
+If loc0b13
+Push register1, "itemarr"
+GetMember
+Push register3
+GetMember
+Push register2
+GetMember
+Push "_currentframe"
+GetMember
+Push 1
+Equals2
+Not
+If loc0a56
+Push register1, "parr"
+GetMember
+Push register1, "itemarr"
+GetMember
+Push register3
+GetMember
+Push register2
+GetMember
+Push "pitem"
+GetMember
+Push register1, "parr"
+GetMember
+Push register1, "itemarr"
+GetMember
+Push register3
+GetMember
+Push register2
+GetMember
+Push "pitem"
+GetMember
+GetMember
+Decrement
+SetMember
+loc0a56:Push register1, "itemarr"
+GetMember
+Push register3
+GetMember
+Push register2
+GetMember
+Push "_currentframe"
+GetMember
+Push 1
+Equals2
+Not
+If loc0a97
+Push 2, 1, register1, "addPoint"
+CallMethod
+Pop
+Jump loc0aaa
+loc0a97:Push 1, 1, register1, "addPoint"
+CallMethod
+Pop
+loc0aaa:Push 0, register1, "onBonus"
+CallMethod
+Pop
+Push 2, 1, register1, "itemarr"
+GetMember
+Push register3
+GetMember
+Push register2
+GetMember
+Push "coin"
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop
+Push 1, register2, 2, register1, "itemarr"
+GetMember
+Push register3
+GetMember
+Push "splice"
+CallMethod
+Pop
+Push register2
+Decrement
+StoreRegister 2
+Pop
+loc0b13:Push register2
+Increment
+StoreRegister 2
+Pop
+Jump loc09a2
+loc0b23:Push register3
+Increment
+StoreRegister 3
+Pop
+Jump loc097a
+}
+loc0b33:SetMember
+Push register2, "deleteItem"
+DefineFunction2 "", 1, 4, false, false, true, false, true, false, false, true, false, 3, "x" {
+Push 0
+StoreRegister 2
+Pop
+loc0b5a:Push register2, register1, "boxarr"
+GetMember
+Push "length"
+GetMember
+Less2
+Not
+If loc0c00
+Push register1, "boxarr"
+GetMember
+Push register2
+GetMember
+Push "_x"
+GetMember
+Push register3
+Less2
+Not
+If loc0bf0
+Push 1, register2, 2, register1, "itemarr"
+GetMember
+Push "splice"
+CallMethod
+Pop
+Push 0, register1, "boxarr"
+GetMember
+Push register2
+GetMember
+Push "removeMovieClip"
+CallMethod
+Pop
+Push 1, register2, 2, register1, "boxarr"
+GetMember
+Push "splice"
+CallMethod
+Pop
+Push register2
+Decrement
+StoreRegister 2
+Pop
+loc0bf0:Push register2
+Increment
+StoreRegister 2
+Pop
+Jump loc0b5a
+}
+loc0c00:SetMember
+Push register2, "onBonus"
+DefineFunction2 "", 0, 3, false, false, true, false, true, false, false, true, false {
+Push 0
+StoreRegister 2
+Pop
+loc0c24:Push register2, register1, "parr"
+GetMember
+Push "length"
+GetMember
+Less2
+Not
+If loc0ca4
+Push register1, "parr"
+GetMember
+Push register2
+GetMember
+Push 0
+Equals2
+Not
+If loc0c94
+Push 3, 1, register1, "addPoint"
+CallMethod
+Pop
+Push 0, register1, "bonusEffect"
+CallMethod
+Pop
+Push register1, "parr"
+GetMember
+Push register2, -1
+SetMember
+loc0c94:Push register2
+Increment
+StoreRegister 2
+Pop
+Jump loc0c24
+}
+loc0ca4:SetMember
+Push register2, "getItemNum"
+DefineFunction2 "", 1, 5, false, false, true, false, true, false, true, false, false, 3, "item" {
+Push 0
+StoreRegister 4
+Pop
+Push 0
+StoreRegister 2
+Pop
+loc0cdf:Push register2, register3, "length"
+GetMember
+Less2
+Not
+If loc0d60
+Push 0
+StoreRegister 1
+Pop
+loc0d01:Push register1, register3, register2
+GetMember
+Push "length"
+GetMember
+Less2
+Not
+If loc0d50
+Push register3, register2
+GetMember
+Push register1
+GetMember
+Push 100
+Less2
+Not
+If loc0d40
+Push register4
+Increment
+StoreRegister 4
+Pop
+loc0d40:Push register1
+Increment
+StoreRegister 1
+Pop
+Jump loc0d01
+loc0d50:Push register2
+Increment
+StoreRegister 2
+Pop
+Jump loc0cdf
+loc0d60:Push register4
+Return
+}
+SetMember
+Push register2, "__get___itemarr"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "itemarr"
+GetMember
+Return
+}
+SetMember
+Push register2, "__set___itemarr"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "arr" {
+Push register1, "itemarr", register2
+SetMember
+Push 0, register1, "__get___itemarr"
+CallMethod
+Return
+}
+SetMember
+Push register2, "__get___boxarr"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "boxarr"
+GetMember
+Return
+}
+SetMember
+Push register2, "__set___boxarr"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "arr" {
+Push register1, "boxarr", register2
+SetMember
+Push 0, register1, "__get___boxarr"
+CallMethod
+Return
+}
+SetMember
+Push register2, "depth", 1
+SetMember
+Push register2, "depthe", 1
+SetMember
+Push register2, "pitem", 0
+SetMember
+Push register2, "bonus", false
+SetMember
+Push register2, "__set___boxarr"
+GetMember
+Push register2, "__get___boxarr"
+GetMember
+Push "_boxarr", 3, register2, "addProperty"
+CallMethod
+Push register2, "__set___itemarr"
+GetMember
+Push register2, "__get___itemarr"
+GetMember
+Push "_itemarr", 3, register2, "addProperty"
+CallMethod
+Push 1, null, "_global"
+GetVariable
+Push "CoinItem"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc0e9d:Pop
+Jump loc101b
+loc0ea3:Jump loc04d9
+loc0ea8:DefineFunction "\x04\x05", 0 {
+Push "\x03", 1682, 511
+Modulo
+Push true
+Multiply
+SetVariable
+Push "\x03", "\x01"
+If loc0ee6
+Jump loc0ee6
+loc0ee6:GetVariable
+Return
+}
+Push "\x01", 463, 0, "\x04\x05"
+CallFunction
+Add2
+DefineLocal
+loc0f09:Push "\x01"
+Jump loc0f1a
+loc0f14:Unknown_03
+Jump loc1563
+loc0f1a:GetVariable
+Push 612
+Equals
+Not
+If loc0f4b
+Push "\x01", "\x01"
+GetVariable
+Push 18
+Subtract
+SetVariable
+Push true
+Jump loc0f09
+loc0f4b:Push "\x01"
+GetVariable
+Push 923
+Equals
+Not
+If loc0f9e
+Push "\x01", "\x01"
+GetVariable
+Push 411
+Subtract
+SetVariable
+If loc0f82
+Jump loc0f99
+loc0f82:Push "\x01", "\x01"
+GetVariable
+Push 105
+Add
+SetVariable
+loc0f99:Jump loc0f09
+loc0f9e:Push "\x01"
+GetVariable
+Push 438
+Equals
+Not
+If loc0fe9
+Push "\x01", "\x01"
+GetVariable
+Push 202
+Add
+SetVariable
+ConstantPool "U\'\f{invalid_utf8=194}", "@L{invalid_utf8=170}\x15{invalid_utf8=226}", "{invalid_utf8=234}.AԔ", "Xy"
+Jump loc0f09
+loc0fe9:Push "\x01"
+GetVariable
+Push 20
+Equals
+Not
+If loc1020
+Push "\x01", "\x01"
+GetVariable
+Push 336
+Add
+SetVariable
+Jump loc0ea3
+loc101b:Jump loc1563
+loc1020:Push "\x01"
+GetVariable
+Push 534
+Equals
+Not
+If loc1231
+Push "\x01", "\x01"
+GetVariable
+Push 514
+Subtract
+SetVariable
+ConstantPool "_global", "CoinItem", "stage", "item", "createEmptyMovieClip", "effect", "itemdata", "ItemData", "itemwait", "itemarr", "boxarr", "parr", "prototype", "addItem", "length", "getItem", "push", "pitem", "getItemNum", "createItem", "shift", "concat", "depth", "_x", "_y", "item_", "id_item", "attachMovie", "gotoAndStop", "Math", "floor", "cacheAsBitmap", "eatItem", "hitTest", "_currentframe", "addPoint", "onBonus", "coin", "splice", "deleteItem", "removeMovieClip", "bonusEffect", "__get___itemarr", "__set___itemarr", "__get___boxarr", "__set___boxarr", "depthe", "bonus", "_boxarr", "addProperty", "_itemarr", "ASSetPropFlags"
+Jump loc0f09
+loc1231:Push "\x01"
+GetVariable
+Push 594
+Equals
+Not
+If loc1284
+Push "\x01", "\x01"
+GetVariable
+Push 214
+Subtract
+SetVariable
+If loc1268
+Jump loc127f
+loc1268:Push "\x01", "\x01"
+GetVariable
+Push 192
+Add
+SetVariable
+loc127f:Jump loc0f09
+loc1284:Push "\x01"
+GetVariable
+Push 230
+Equals
+Not
+If loc12b7
+Push "\x01", "\x01"
+GetVariable
+Push 348
+Add
+SetVariable
+GetVariable
+Jump loc0f09
+loc12b7:Push "\x01"
+GetVariable
+Push 617
+Equals
+Not
+If loc12e9
+Push "\x01", "\x01"
+GetVariable
+Push 180
+Subtract
+SetVariable
+Jump loc0f09
+loc12e9:Push "\x01"
+GetVariable
+Push 603
+Equals
+Not
+If loc1331
+Push "\x01", "\x01"
+GetVariable
+Push 166
+Subtract
+SetVariable
+ConstantPool "[]", "{invalid_utf8=179}e", "u{invalid_utf8=162}C{invalid_utf8=172}D", "{invalid_utf8=224} /{invalid_utf8=205}"
+Jump loc0f09
+loc1331:Push "\x01"
+GetVariable
+Push 573
+Equals
+Not
+If loc1369
+Push "\x01", "\x01"
+GetVariable
+Push 343
+Subtract
+SetVariable
+Push "\x0f"
+Jump loc0f09
+loc1369:Push "\x01"
+GetVariable
+Push 380
+Equals
+Not
+If loc139b
+Push "\x01", "\x01"
+GetVariable
+Push 192
+Add
+SetVariable
+Jump loc0005
+loc139b:Push "\x01"
+GetVariable
+Push 996
+Equals
+Not
+If loc13ee
+Push "\x01", "\x01"
+GetVariable
+Push 462
+Subtract
+SetVariable
+If loc13d2
+Jump loc13e9
+loc13d2:Push "\x01", "\x01"
+GetVariable
+Push 514
+Subtract
+SetVariable
+loc13e9:Jump loc0f09
+loc13ee:Push "\x01"
+GetVariable
+Push 572
+Equals
+Not
+If loc1420
+Push "\x01", "\x01"
+GetVariable
+Push 68
+Add
+SetVariable
+Jump loc0f09
+loc1420:Push "\x01"
+GetVariable
+Push 640
+Equals
+Not
+If loc1457
+Push "\x01", "\x01"
+GetVariable
+Push 283
+Add
+SetVariable
+Push true
+Jump loc0f09
+loc1457:Push "\x01"
+GetVariable
+Push 512
+Equals
+Not
+If loc1489
+Push "\x01", "\x01"
+GetVariable
+Push 105
+Add
+SetVariable
+Jump loc1563
+loc1489:Push "\x01"
+GetVariable
+Push 437
+Equals
+Not
+If loc14c6
+Push "\x01", "\x01"
+GetVariable
+Push 23
+Add
+SetVariable
+Push "\x0f", 1
+Jump loc0f09
+loc14c6:Push "\x01"
+GetVariable
+Push 460
+Equals
+Not
+If loc14f9
+Push "\x01", "\x01"
+GetVariable
+Push 113
+Add
+SetVariable
+DefineLocal
+Jump loc0f09
+loc14f9:Push "\x01"
+GetVariable
+Push 578
+Equals
+Not
+If loc152c
+Push "\x01", "\x01"
+GetVariable
+Push 418
+Add
+SetVariable
+Not
+Jump loc0f09
+loc152c:Push "\x01"
+GetVariable
+Push 356
+Equals
+Not
+If loc155e
+Push "\x01", "\x01"
+GetVariable
+Push 356
+Subtract
+SetVariable
+Jump loc1563
+loc155e:Jump loc0f14
+loc1563:

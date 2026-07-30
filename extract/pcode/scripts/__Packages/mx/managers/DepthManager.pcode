@@ -1,0 +1,2017 @@
+Jump loc1ac7
+loc0005:Subtract
+Push 3, 3, 7, register1, "down"
+CallMethod
+Pop
+Push 100, 16316664, 2, register2, 7
+Subtract
+Push register3, 6
+Subtract
+Push 4, 3, 7, register1, "down"
+CallMethod
+Pop
+Jump loc0060
+loc0060:SetMember
+Push register1, "up"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, true, false, true {
+Push 0, "mx"
+GetVariable
+Push "depthChild"
+GetMember
+Push "createClassObject"
+GetMember
+Push "_topmost"
+GetMember
+Push "createObject"
+CallMethod
+Pop
+Push register1, "_parent"
+GetMember
+Push "MovieClip", true
+SetMember
+Push true
+Return
+}
+SetMember
+Push register1, "swapDepths", "MovieClip"
+SetMember
+Push register1, "highestDepth", "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "MovieClip"
+GetMember
+SetMember
+Push register2, "lowestDepth", "MovieClip"
+SetMember
+Push register2, "numberOfAuthortimeLayers", "Math"
+SetMember
+Push register1, "min", 0, "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "MovieClip"
+GetMember
+Push "up"
+CallMethod
+SetMember
+Push register1, "Array", "mx"
+GetVariable
+Push "depthChild"
+GetMember
+Push "createClassObject"
+GetMember
+Push "_topmost"
+GetMember
+SetMember
+Push 1, null, "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "MovieClip"
+GetMember
+Push "createClassChildAtDepth"
+GetMember
+Push 3, "push"
+CallFunction
+Pop
+Jump loc016b
+loc016b:Jump loc0170
+loc0170:Jump loc2221
+loc0175:BitLShift
+BitLShift
+Unknown_6f
+Unknown_72
+BitRShift
+Extends
+Unknown_6f
+Unknown_6e
+Jump loc2221
+loc0182:Push "_global"
+GetVariable
+Push "mx"
+GetMember
+Not
+Not
+If loc01ad
+Push "_global"
+GetVariable
+Push "mx", 0, "Object"
+NewObject
+SetMember
+loc01ad:Pop
+Push "_global"
+GetVariable
+Push "mx"
+GetMember
+Push "managers"
+GetMember
+Not
+Not
+If loc01e5
+Push "_global"
+GetVariable
+Push "mx"
+GetMember
+Push "managers", 0, "Object"
+NewObject
+SetMember
+loc01e5:Pop
+Push "_global"
+GetVariable
+Push "mx"
+GetMember
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Not
+Not
+If loc1abc
+Push "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+DefineFunction2 "", 0, 3, false, false, true, false, true, false, false, true, true {
+Push "MovieClip"
+GetVariable
+Push "prototype"
+GetMember
+Push "createClassChildAtDepth", register1, "createClassChildAtDepth"
+GetMember
+SetMember
+Push "MovieClip"
+GetVariable
+Push "prototype"
+GetMember
+Push "createChildAtDepth", register1, "createChildAtDepth"
+GetMember
+SetMember
+Push "MovieClip"
+GetVariable
+Push "prototype"
+GetMember
+Push "setDepthTo", register1, "setDepthTo"
+GetMember
+SetMember
+Push "MovieClip"
+GetVariable
+Push "prototype"
+GetMember
+Push "setDepthAbove", register1, "setDepthAbove"
+GetMember
+SetMember
+Push "MovieClip"
+GetVariable
+Push "prototype"
+GetMember
+Push "setDepthBelow", register1, "setDepthBelow"
+GetMember
+SetMember
+Push "MovieClip"
+GetVariable
+Push "prototype"
+GetMember
+Push "findNextAvailableDepth", register1, "findNextAvailableDepth"
+GetMember
+SetMember
+Push "MovieClip"
+GetVariable
+Push "prototype"
+GetMember
+Push "shuffleDepths", register1, "shuffleDepths"
+GetMember
+SetMember
+Push "MovieClip"
+GetVariable
+Push "prototype"
+GetMember
+Push "getDepthByFlag", register1, "getDepthByFlag"
+GetMember
+SetMember
+Push "MovieClip"
+GetVariable
+Push "prototype"
+GetMember
+Push "buildDepthTable", register1, "buildDepthTable"
+GetMember
+SetMember
+Push 1, "createClassChildAtDepth", "MovieClip"
+GetVariable
+Push "prototype"
+GetMember
+Push 3, register2, "ASSetPropFlags"
+CallMethod
+Pop
+Push 1, "createChildAtDepth", "MovieClip"
+GetVariable
+Push "prototype"
+GetMember
+Push 3, register2, "ASSetPropFlags"
+CallMethod
+Pop
+Push 1, "setDepthTo", "MovieClip"
+GetVariable
+Push "prototype"
+GetMember
+Push 3, register2, "ASSetPropFlags"
+CallMethod
+Pop
+Push 1, "setDepthAbove", "MovieClip"
+GetVariable
+Push "prototype"
+GetMember
+Push 3, register2, "ASSetPropFlags"
+CallMethod
+Pop
+Push 1, "setDepthBelow", "MovieClip"
+GetVariable
+Push "prototype"
+GetMember
+Push 3, register2, "ASSetPropFlags"
+CallMethod
+Pop
+Push 1, "findNextAvailableDepth", "MovieClip"
+GetVariable
+Push "prototype"
+GetMember
+Push 3, register2, "ASSetPropFlags"
+CallMethod
+Pop
+Push 1, "shuffleDepths", "MovieClip"
+GetVariable
+Push "prototype"
+GetMember
+Push 3, register2, "ASSetPropFlags"
+CallMethod
+Pop
+Push 1, "getDepthByFlag", "MovieClip"
+GetVariable
+Push "prototype"
+GetMember
+Push 3, register2, "ASSetPropFlags"
+CallMethod
+Pop
+Push 1, "buildDepthTable", "MovieClip"
+GetVariable
+Push "prototype"
+GetMember
+Push 3, register2, "ASSetPropFlags"
+CallMethod
+Pop
+}
+StoreRegister 1
+SetMember
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register1, "sortFunction"
+DefineFunction2 "", 2, 3, false, false, true, false, true, false, true, false, false, 2, "a", 1, "b" {
+Push 0, register2, "getDepth"
+CallMethod
+Push 0, register1, "getDepth"
+CallMethod
+Greater
+Not
+If loc0475
+Push 1
+Return
+loc0475:Push -1
+Return
+}
+SetMember
+Push register1, "test"
+DefineFunction2 "", 1, 2, false, false, true, false, true, false, true, false, false, 1, "depth" {
+Push register1, "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "reservedDepth"
+GetMember
+Equals2
+Not
+If loc04bf
+Push false
+Return
+loc04bf:Push true
+Return
+}
+SetMember
+Push register1, "createClassObjectAtDepth"
+DefineFunction2 "", 3, 5, false, false, true, false, true, false, true, false, false, 3, "className", 4, "depthSpace", 2, "initObj" {
+Push undefined
+StoreRegister 1
+Pop
+Push register4
+StoreRegister 0
+Push "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "kCursor"
+GetMember
+StrictEquals
+If loc054d
+Push register0, "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "kTooltip"
+GetMember
+StrictEquals
+If loc0596
+Jump loc05df
+loc054d:Push register2, "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "kTopmost"
+GetMember
+Push register3, 3, "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "holder"
+GetMember
+Push "createClassChildAtDepth"
+CallMethod
+StoreRegister 1
+Pop
+Jump loc05e4
+loc0596:Push register2, "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "kTop"
+GetMember
+Push register3, 3, "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "holder"
+GetMember
+Push "createClassChildAtDepth"
+CallMethod
+StoreRegister 1
+Pop
+Jump loc05e4
+loc05df:Jump loc05e4
+loc05e4:Push register1
+Return
+}
+SetMember
+Push register1, "createObjectAtDepth"
+DefineFunction2 "", 3, 5, false, false, true, false, true, false, true, false, false, 3, "linkageName", 4, "depthSpace", 2, "initObj" {
+Push undefined
+StoreRegister 1
+Pop
+Push register4
+StoreRegister 0
+Push "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "kCursor"
+GetMember
+StrictEquals
+If loc0674
+Push register0, "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "kTooltip"
+GetMember
+StrictEquals
+If loc06bd
+Jump loc0706
+loc0674:Push register2, "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "kTopmost"
+GetMember
+Push register3, 3, "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "holder"
+GetMember
+Push "createChildAtDepth"
+CallMethod
+StoreRegister 1
+Pop
+Jump loc070b
+loc06bd:Push register2, "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "kTop"
+GetMember
+Push register3, 3, "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "holder"
+GetMember
+Push "createChildAtDepth"
+CallMethod
+StoreRegister 1
+Pop
+Jump loc070b
+loc0706:Jump loc070b
+loc070b:Push register1
+Return
+}
+SetMember
+Push register2, "createClassChildAtDepth"
+DefineFunction2 "", 3, 10, false, false, true, false, true, false, false, true, false, 9, "className", 7, "depthFlag", 8, "initObj" {
+Push register1, "_childCounter"
+GetMember
+Push undefined
+Equals2
+Not
+If loc0767
+Push register1, "_childCounter", 0
+SetMember
+loc0767:Push 0, register1, "buildDepthTable"
+CallMethod
+StoreRegister 3
+Pop
+Push register3, register7, 2, register1, "getDepthByFlag"
+CallMethod
+StoreRegister 2
+Pop
+Push "down"
+StoreRegister 5
+Pop
+Push register7, "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "kBottom"
+GetMember
+Equals2
+Not
+If loc07c8
+Push "up"
+StoreRegister 5
+Pop
+loc07c8:Push undefined
+StoreRegister 6
+Pop
+Push register3, register2
+GetMember
+Push undefined
+Equals2
+Not
+Not
+If loc0807
+Push register2
+StoreRegister 6
+Pop
+Push register5, register3, register2, 3, register1, "findNextAvailableDepth"
+CallMethod
+StoreRegister 2
+Pop
+loc0807:Push register8, register2, "depthChild", register1, "_childCounter"
+GetMember
+Push register1, "_childCounter", register1, "_childCounter"
+GetMember
+Increment
+SetMember
+Add2
+Push register9, 4, register1, "createClassObject"
+CallMethod
+StoreRegister 4
+Pop
+Push register6, undefined
+Equals2
+Not
+Not
+If loc0866
+Push register3, register2, register4
+SetMember
+Push register5, register3, register6, register4, 4, register1, "shuffleDepths"
+CallMethod
+Pop
+loc0866:Push register7, "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "kTopmost"
+GetMember
+Equals2
+Not
+If loc0891
+Push register4, "_topmost", true
+SetMember
+loc0891:Push register4
+Return
+}
+SetMember
+Push register2, "createChildAtDepth"
+DefineFunction2 "", 3, 10, false, false, true, false, true, false, false, true, false, 9, "linkageName", 7, "depthFlag", 8, "initObj" {
+Push register1, "_childCounter"
+GetMember
+Push undefined
+Equals2
+Not
+If loc08ef
+Push register1, "_childCounter", 0
+SetMember
+loc08ef:Push 0, register1, "buildDepthTable"
+CallMethod
+StoreRegister 3
+Pop
+Push register3, register7, 2, register1, "getDepthByFlag"
+CallMethod
+StoreRegister 2
+Pop
+Push "down"
+StoreRegister 5
+Pop
+Push register7, "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "kBottom"
+GetMember
+Equals2
+Not
+If loc0950
+Push "up"
+StoreRegister 5
+Pop
+loc0950:Push undefined
+StoreRegister 6
+Pop
+Push register3, register2
+GetMember
+Push undefined
+Equals2
+Not
+Not
+If loc098f
+Push register2
+StoreRegister 6
+Pop
+Push register5, register3, register2, 3, register1, "findNextAvailableDepth"
+CallMethod
+StoreRegister 2
+Pop
+loc098f:Push register8, register2, "depthChild", register1, "_childCounter"
+GetMember
+Push register1, "_childCounter", register1, "_childCounter"
+GetMember
+Increment
+SetMember
+Add2
+Push register9, 4, register1, "createObject"
+CallMethod
+StoreRegister 4
+Pop
+Push register6, undefined
+Equals2
+Not
+Not
+If loc09ee
+Push register3, register2, register4
+SetMember
+Push register5, register3, register6, register4, 4, register1, "shuffleDepths"
+CallMethod
+Pop
+loc09ee:Push register7, "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "kTopmost"
+GetMember
+Equals2
+Not
+If loc0a19
+Push register4, "_topmost", true
+SetMember
+loc0a19:Push register4
+Return
+}
+SetMember
+Push register2, "setDepthTo"
+DefineFunction2 "", 1, 5, false, false, true, false, true, false, false, true, false, 4, "depthFlag" {
+Push 0, register1, "_parent"
+GetMember
+Push "buildDepthTable"
+CallMethod
+StoreRegister 2
+Pop
+Push register2, register4, 2, register1, "_parent"
+GetMember
+Push "getDepthByFlag"
+CallMethod
+StoreRegister 3
+Pop
+Push register2, register3
+GetMember
+Push undefined
+Equals2
+Not
+Not
+If loc0aad
+Push undefined, register2, register3, "MovieClip"
+GetVariable
+Push register1
+CastOp
+Push 4, register1, "shuffleDepths"
+CallMethod
+Pop
+Jump loc0abd
+loc0aad:Push register3, 1, register1, "swapDepths"
+CallMethod
+Pop
+loc0abd:Push register4, "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "kTopmost"
+GetMember
+Equals2
+Not
+If loc0aed
+Push register1, "_topmost", true
+SetMember
+Jump loc0af6
+loc0aed:Push register1, "_topmost"
+Delete
+Pop
+}
+loc0af6:SetMember
+Push register2, "setDepthAbove"
+DefineFunction2 "", 1, 5, false, false, true, false, true, false, false, true, false, 4, "targetInstance" {
+Push register4, "_parent"
+GetMember
+Push register1, "_parent"
+GetMember
+Equals2
+Not
+Not
+If loc0b36
+Push undefined
+Return
+loc0b36:Push 0, register4, "getDepth"
+CallMethod
+Push 1
+Add2
+StoreRegister 2
+Pop
+Push 0, register1, "_parent"
+GetMember
+Push "buildDepthTable"
+CallMethod
+StoreRegister 3
+Pop
+Push register3, register2
+GetMember
+Push undefined
+Equals2
+Not
+PushDuplicate
+Not
+If loc0b9e
+Pop
+Push 0, register1, "getDepth"
+CallMethod
+Push register2
+Less2
+loc0b9e:Not
+If loc0bb4
+Push register2, 1
+Subtract
+StoreRegister 2
+Pop
+loc0bb4:Push register2, "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "highestDepth"
+GetMember
+Greater
+Not
+If loc0bf2
+Push "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "highestDepth"
+GetMember
+StoreRegister 2
+Pop
+loc0bf2:Push register2, "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "highestDepth"
+GetMember
+Equals2
+Not
+If loc0c34
+Push "down", register3, register2, register1, 4, register1, "_parent"
+GetMember
+Push "shuffleDepths"
+CallMethod
+Pop
+Jump loc0c78
+loc0c34:Push register3, register2
+GetMember
+Push undefined
+Equals2
+Not
+Not
+If loc0c68
+Push undefined, register3, register2, register1, 4, register1, "_parent"
+GetMember
+Push "shuffleDepths"
+CallMethod
+Pop
+Jump loc0c78
+loc0c68:Push register2, 1, register1, "swapDepths"
+CallMethod
+Pop
+}
+loc0c78:SetMember
+Push register2, "setDepthBelow"
+DefineFunction2 "", 1, 8, false, false, true, false, true, false, false, true, false, 7, "targetInstance" {
+Push register7, "_parent"
+GetMember
+Push register1, "_parent"
+GetMember
+Equals2
+Not
+Not
+If loc0cb8
+Push undefined
+Return
+loc0cb8:Push 0, register7, "getDepth"
+CallMethod
+Push 1
+Subtract
+StoreRegister 6
+Pop
+Push 0, register1, "_parent"
+GetMember
+Push "buildDepthTable"
+CallMethod
+StoreRegister 3
+Pop
+Push register3, register6
+GetMember
+Push undefined
+Equals2
+Not
+PushDuplicate
+Not
+If loc0d20
+Pop
+Push 0, register1, "getDepth"
+CallMethod
+Push register6
+Greater
+loc0d20:Not
+If loc0d36
+Push register6, 1
+Add2
+StoreRegister 6
+Pop
+loc0d36:Push "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "lowestDepth"
+GetMember
+Push "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "numberOfAuthortimeLayers"
+GetMember
+Add2
+StoreRegister 4
+Pop
+Push undefined
+StoreRegister 5
+Pop
+Push register3
+Enumerate2
+loc0d7b:StoreRegister 0
+Push null
+Equals2
+If loc0de2
+Push register0
+StoreRegister 5
+Pop
+Push register3, register5
+GetMember
+StoreRegister 2
+Pop
+Push register2, "_parent"
+GetMember
+Push undefined
+Equals2
+Not
+Not
+If loc0ddd
+Push 0, register2, "getDepth"
+CallMethod
+Push register4, 2, "Math"
+GetVariable
+Push "min"
+CallMethod
+StoreRegister 4
+Pop
+loc0ddd:Jump loc0d7b
+loc0de2:Push register6, register4
+Less2
+Not
+If loc0dfa
+Push register4
+StoreRegister 6
+Pop
+loc0dfa:Push register6, register4
+Equals2
+Not
+If loc0e29
+Push "up", register3, register6, register1, 4, register1, "_parent"
+GetMember
+Push "shuffleDepths"
+CallMethod
+Pop
+Jump loc0e6d
+loc0e29:Push register3, register6
+GetMember
+Push undefined
+Equals2
+Not
+Not
+If loc0e5d
+Push undefined, register3, register6, register1, 4, register1, "_parent"
+GetMember
+Push "shuffleDepths"
+CallMethod
+Pop
+Jump loc0e6d
+loc0e5d:Push register6, 1, register1, "swapDepths"
+CallMethod
+Pop
+}
+loc0e6d:SetMember
+Push register2, "findNextAvailableDepth"
+DefineFunction2 "", 3, 7, false, false, true, false, true, false, true, false, false, 4, "targetDepth", 3, "depthTable", 6, "direction" {
+Push "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "lowestDepth"
+GetMember
+Push "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "numberOfAuthortimeLayers"
+GetMember
+Add2
+StoreRegister 5
+Pop
+Push register4, register5
+Less2
+Not
+If loc0ef2
+Push register5
+StoreRegister 4
+Pop
+loc0ef2:Push register3, register4
+GetMember
+Push undefined
+Equals2
+Not
+If loc0f0b
+Push register4
+Return
+loc0f0b:Push register4
+StoreRegister 1
+Pop
+Push register4
+StoreRegister 2
+Pop
+Push register6, "down"
+Equals2
+Not
+If loc0f57
+loc0f2d:Push register3, register2
+GetMember
+Push undefined
+Equals2
+Not
+Not
+If loc0f51
+Push register2
+Decrement
+StoreRegister 2
+Pop
+Jump loc0f2d
+loc0f51:Push register2
+Return
+loc0f57:Push register3, register1
+GetMember
+Push undefined
+Equals2
+Not
+Not
+If loc0f7b
+Push register1
+Increment
+StoreRegister 1
+Pop
+Jump loc0f57
+loc0f7b:Push register1
+Return
+}
+SetMember
+Push register2, "shuffleDepths"
+DefineFunction2 "", 4, 13, false, false, true, false, true, false, true, false, false, 2, "subject", 10, "targetDepth", 6, "depthTable", 12, "direction" {
+Push "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "lowestDepth"
+GetMember
+Push "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "numberOfAuthortimeLayers"
+GetMember
+Add2
+StoreRegister 9
+Pop
+Push register9
+StoreRegister 8
+Pop
+Push undefined
+StoreRegister 5
+Pop
+Push register6
+Enumerate2
+loc1010:StoreRegister 0
+Push null
+Equals2
+If loc1077
+Push register0
+StoreRegister 5
+Pop
+Push register6, register5
+GetMember
+StoreRegister 7
+Pop
+Push register7, "_parent"
+GetMember
+Push undefined
+Equals2
+Not
+Not
+If loc1072
+Push 0, register7, "getDepth"
+CallMethod
+Push register9, 2, "Math"
+GetVariable
+Push "min"
+CallMethod
+StoreRegister 9
+Pop
+loc1072:Jump loc1010
+loc1077:Push register12, undefined
+Equals2
+Not
+If loc10ba
+Push 0, register2, "getDepth"
+CallMethod
+Push register10
+Greater
+Not
+If loc10b0
+Push "up"
+StoreRegister 12
+Pop
+Jump loc10ba
+loc10b0:Push "down"
+StoreRegister 12
+Pop
+loc10ba:Push 0, "Array"
+NewObject
+StoreRegister 1
+Pop
+Push register6
+Enumerate2
+loc10d4:StoreRegister 0
+Push null
+Equals2
+If loc1122
+Push register0
+StoreRegister 5
+Pop
+Push register6, register5
+GetMember
+StoreRegister 7
+Pop
+Push register7, "_parent"
+GetMember
+Push undefined
+Equals2
+Not
+Not
+If loc111d
+Push register7, 1, register1, "push"
+CallMethod
+Pop
+loc111d:Jump loc10d4
+loc1122:Push "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "sortFunction"
+GetMember
+Push 1, register1, "sort"
+CallMethod
+Pop
+Push register12, "up"
+Equals2
+Not
+If loc12b1
+Push undefined
+StoreRegister 3
+Pop
+Push undefined
+StoreRegister 11
+Pop
+loc1168:Push register1, "length"
+GetMember
+Push 0
+Greater
+Not
+If loc11b1
+Push 0, register1, "pop"
+CallMethod
+StoreRegister 3
+Pop
+Push register3, register2
+Equals2
+Not
+If loc11ac
+Jump loc11b1
+loc11ac:Jump loc1168
+loc11b1:Push register1, "length"
+GetMember
+Push 0
+Greater
+Not
+If loc12ac
+Push 0, register2, "getDepth"
+CallMethod
+StoreRegister 11
+Pop
+Push 0, register1, "pop"
+CallMethod
+StoreRegister 3
+Pop
+Push 0, register3, "getDepth"
+CallMethod
+StoreRegister 4
+Pop
+Push register11, register4, 1
+Add2
+Greater
+Not
+If loc1284
+Push register4, 0
+Less2
+Not
+Not
+If loc1256
+Push register4, 1
+Add2
+Push 1, register2, "swapDepths"
+CallMethod
+Pop
+Jump loc1284
+loc1256:Push register11, register8
+Greater
+PushDuplicate
+Not
+If loc126e
+Pop
+Push register4, register8
+Less2
+loc126e:Not
+If loc1284
+Push register8, 1, register2, "swapDepths"
+CallMethod
+Pop
+loc1284:Push register3, 1, register2, "swapDepths"
+CallMethod
+Pop
+Push register4, register10
+Equals2
+Not
+If loc12a7
+Jump loc12ac
+loc12a7:Jump loc11b1
+loc12ac:Jump loc13da
+loc12b1:Push register12, "down"
+Equals2
+Not
+If loc13da
+Push undefined
+StoreRegister 3
+Pop
+loc12c8:Push register1, "length"
+GetMember
+Push 0
+Greater
+Not
+If loc1311
+Push 0, register1, "shift"
+CallMethod
+StoreRegister 3
+Pop
+Push register3, register2
+Equals2
+Not
+If loc130c
+Jump loc1311
+loc130c:Jump loc12c8
+loc1311:Push register1, "length"
+GetMember
+Push 0
+Greater
+Not
+If loc13da
+Push 0, register3, "getDepth"
+CallMethod
+StoreRegister 11
+Pop
+Push 0, register1, "shift"
+CallMethod
+StoreRegister 3
+Pop
+Push 0, register3, "getDepth"
+CallMethod
+StoreRegister 4
+Pop
+Push register11, register4, 1
+Subtract
+Less2
+PushDuplicate
+Not
+If loc1393
+Pop
+Push register4, 0
+Greater
+loc1393:Not
+If loc13b2
+Push register4, 1
+Subtract
+Push 1, register2, "swapDepths"
+CallMethod
+Pop
+loc13b2:Push register3, 1, register2, "swapDepths"
+CallMethod
+Pop
+Push register4, register10
+Equals2
+Not
+If loc13d5
+Jump loc13da
+loc13d5:Jump loc1311
+}
+loc13da:SetMember
+Push register2, "getDepthByFlag"
+DefineFunction2 "", 2, 11, false, false, true, false, true, false, true, false, false, 10, "depthFlag", 1, "depthTable" {
+Push 0
+StoreRegister 2
+Pop
+Push register10, "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "kTop"
+GetMember
+Equals2
+PushDuplicate
+If loc1452
+Pop
+Push register10, "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "kNotopmost"
+GetMember
+Equals2
+loc1452:Not
+If loc15f1
+Push 0
+StoreRegister 5
+Pop
+Push false
+StoreRegister 7
+Pop
+Push undefined
+StoreRegister 8
+Pop
+Push register1
+Enumerate2
+loc1482:StoreRegister 0
+Push null
+Equals2
+If loc15b2
+Push register0
+StoreRegister 8
+Pop
+Push register1, register8
+GetMember
+StoreRegister 9
+Pop
+Push register9
+TypeOf
+StoreRegister 3
+Pop
+Push register3, "movieclip"
+Equals2
+PushDuplicate
+If loc14df
+Pop
+Push register3, "object"
+Equals2
+PushDuplicate
+Not
+If loc14df
+Pop
+Push register9, "__getTextFormat"
+GetMember
+Push undefined
+Equals2
+Not
+loc14df:Not
+If loc15ad
+Push 0, register9, "getDepth"
+CallMethod
+Push "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "highestDepth"
+GetMember
+Greater
+Not
+Not
+If loc15ad
+Push register9, "_topmost"
+GetMember
+Not
+Not
+If loc1553
+Push 0, register9, "getDepth"
+CallMethod
+Push register2, 2, "Math"
+GetVariable
+Push "max"
+CallMethod
+StoreRegister 2
+Pop
+Jump loc15ad
+loc1553:Push register7
+Not
+Not
+If loc1584
+Push 0, register9, "getDepth"
+CallMethod
+StoreRegister 5
+Pop
+Push true
+StoreRegister 7
+Pop
+Jump loc15ad
+loc1584:Push 0, register9, "getDepth"
+CallMethod
+Push register5, 2, "Math"
+GetVariable
+Push "min"
+CallMethod
+StoreRegister 5
+Pop
+loc15ad:Jump loc1482
+loc15b2:Push register2, 20
+Add2
+StoreRegister 2
+Pop
+Push register7
+Not
+If loc15ec
+Push register2, register5
+Less2
+Not
+Not
+If loc15ec
+Push register5, 1
+Subtract
+StoreRegister 2
+Pop
+loc15ec:Jump loc17e8
+loc15f1:Push register10, "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "kBottom"
+GetMember
+Equals2
+Not
+If loc16ef
+Push register1
+Enumerate2
+loc1618:StoreRegister 0
+Push null
+Equals2
+If loc16da
+Push register0
+StoreRegister 8
+Pop
+Push register1, register8
+GetMember
+StoreRegister 9
+Pop
+Push register9
+TypeOf
+StoreRegister 3
+Pop
+Push register3, "movieclip"
+Equals2
+PushDuplicate
+If loc1675
+Pop
+Push register3, "object"
+Equals2
+PushDuplicate
+Not
+If loc1675
+Pop
+Push register9, "__getTextFormat"
+GetMember
+Push undefined
+Equals2
+Not
+loc1675:Not
+If loc16d5
+Push 0, register9, "getDepth"
+CallMethod
+Push "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "highestDepth"
+GetMember
+Greater
+Not
+Not
+If loc16d5
+Push 0, register9, "getDepth"
+CallMethod
+Push register2, 2, "Math"
+GetVariable
+Push "min"
+CallMethod
+StoreRegister 2
+Pop
+loc16d5:Jump loc1618
+loc16da:Push register2, 20
+Subtract
+StoreRegister 2
+Pop
+Jump loc17e8
+loc16ef:Push register10, "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "kTopmost"
+GetMember
+Equals2
+Not
+If loc17e8
+Push register1
+Enumerate2
+loc1716:StoreRegister 0
+Push null
+Equals2
+If loc17d8
+Push register0
+StoreRegister 8
+Pop
+Push register1, register8
+GetMember
+StoreRegister 9
+Pop
+Push register9
+TypeOf
+StoreRegister 3
+Pop
+Push register3, "movieclip"
+Equals2
+PushDuplicate
+If loc1773
+Pop
+Push register3, "object"
+Equals2
+PushDuplicate
+Not
+If loc1773
+Pop
+Push register9, "__getTextFormat"
+GetMember
+Push undefined
+Equals2
+Not
+loc1773:Not
+If loc17d3
+Push 0, register9, "getDepth"
+CallMethod
+Push "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "highestDepth"
+GetMember
+Greater
+Not
+Not
+If loc17d3
+Push 0, register9, "getDepth"
+CallMethod
+Push register2, 2, "Math"
+GetVariable
+Push "max"
+CallMethod
+StoreRegister 2
+Pop
+loc17d3:Jump loc1716
+loc17d8:Push register2, 100
+Add2
+StoreRegister 2
+Pop
+loc17e8:Push register2, "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "highestDepth"
+GetMember
+Less2
+Not
+Not
+If loc1827
+Push "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "highestDepth"
+GetMember
+StoreRegister 2
+Pop
+loc1827:Push "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "lowestDepth"
+GetMember
+Push "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "numberOfAuthortimeLayers"
+GetMember
+Add2
+StoreRegister 6
+Pop
+Push register1
+Enumerate2
+loc1863:StoreRegister 0
+Push null
+Equals2
+If loc18ca
+Push register0
+StoreRegister 9
+Pop
+Push register1, register9
+GetMember
+StoreRegister 4
+Pop
+Push register4, "_parent"
+GetMember
+Push undefined
+Equals2
+Not
+Not
+If loc18c5
+Push 0, register4, "getDepth"
+CallMethod
+Push register6, 2, "Math"
+GetVariable
+Push "min"
+CallMethod
+StoreRegister 6
+Pop
+loc18c5:Jump loc1863
+loc18ca:Push register2, register6
+Greater
+Not
+Not
+If loc18e3
+Push register6
+StoreRegister 2
+Pop
+loc18e3:Push register2
+Return
+}
+SetMember
+Push register2, "buildDepthTable"
+DefineFunction2 "", 1, 6, false, false, true, false, true, false, false, true, false, 0, "Void" {
+Push 0, "Array"
+NewObject
+StoreRegister 5
+Pop
+Push undefined
+StoreRegister 4
+Pop
+Push register1
+Enumerate2
+loc1925:StoreRegister 0
+Push null
+Equals2
+If loc19ba
+Push register0
+StoreRegister 4
+Pop
+Push register1, register4
+GetMember
+StoreRegister 2
+Pop
+Push register2
+TypeOf
+StoreRegister 3
+Pop
+Push register3, "movieclip"
+Equals2
+PushDuplicate
+If loc1982
+Pop
+Push register3, "object"
+Equals2
+PushDuplicate
+Not
+If loc1982
+Pop
+Push register2, "__getTextFormat"
+GetMember
+Push undefined
+Equals2
+Not
+loc1982:Not
+If loc19b5
+Push register2, "_parent"
+GetMember
+Push register1
+Equals2
+Not
+If loc19b5
+Push register5, 0, register2, "getDepth"
+CallMethod
+Push register2
+SetMember
+loc19b5:Jump loc1925
+loc19ba:Push register5
+Return
+}
+SetMember
+Push register1, "reservedDepth", 1048575
+SetMember
+Push register1, "highestDepth", 1048574
+SetMember
+Push register1, "lowestDepth", -16383
+SetMember
+Push register1, "numberOfAuthortimeLayers", 383
+SetMember
+Push register1, "kCursor", 101
+SetMember
+Push register1, "kTooltip", 102
+SetMember
+Push register1, "kTop", 201
+SetMember
+Push register1, "kBottom", 202
+SetMember
+Push register1, "kTopmost", 203
+SetMember
+Push register1, "kNotopmost", 204
+SetMember
+Push register1, "holder", "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "reservedDepth"
+GetMember
+Push "reserved", 2, "_root"
+GetVariable
+Push "createEmptyMovieClip"
+CallMethod
+SetMember
+Push register1, "__depthManager", 0, "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+NewMethod
+SetMember
+Push 1, null, "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "DepthManager"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc1abc:Pop
+Jump loc209d
+loc1ac2:Jump loc0182
+loc1ac7:DefineFunction "\x04\x05", 0 {
+Push "\x03", 2199, 511
+Modulo
+Push true
+Multiply
+SetVariable
+Push "\x03", "\x01"
+If loc1b05
+Jump loc1b05
+loc1b05:GetVariable
+Return
+}
+Push "\x01", 413, 0, "\x04\x05"
+CallFunction
+Add2
+DefineLocal
+loc1b28:Push "\x01"
+Jump loc1b39
+loc1b33:Unknown_03
+Jump loc2221
+loc1b39:GetVariable
+Push 568
+Equals
+Not
+If loc1b6a
+Push "\x01", "\x01"
+GetVariable
+Push 128
+Add
+SetVariable
+Push true
+Jump loc1b28
+loc1b6a:Push "\x01"
+GetVariable
+Push 643
+Equals
+Not
+If loc1ba2
+Push "\x01", "\x01"
+GetVariable
+Push 375
+Subtract
+SetVariable
+Push "\x0f"
+Jump loc1b28
+loc1ba2:Push "\x01"
+GetVariable
+Push 525
+Equals
+Not
+If loc1bd5
+Push "\x01", "\x01"
+GetVariable
+Push 402
+Subtract
+SetVariable
+Not
+Jump loc1b28
+loc1bd5:Push "\x01"
+GetVariable
+Push 123
+Equals
+Not
+If loc1c28
+Push "\x01", "\x01"
+GetVariable
+Push 17
+Add
+SetVariable
+If loc1c0c
+Jump loc1c23
+loc1c0c:Push "\x01", "\x01"
+GetVariable
+Push 796
+Add
+SetVariable
+loc1c23:Jump loc1b28
+loc1c28:Push "\x01"
+GetVariable
+Push 193
+Equals
+Not
+If loc1c5b
+Push "\x01", "\x01"
+GetVariable
+Push 450
+Add
+SetVariable
+DefineLocal
+Jump loc1b28
+loc1c5b:Push "\x01"
+GetVariable
+Push 268
+Equals
+Not
+If loc1c8e
+Push "\x01", "\x01"
+GetVariable
+Push 257
+Add
+SetVariable
+GetVariable
+Jump loc1b28
+loc1c8e:Push "\x01"
+GetVariable
+Push 599
+Equals
+Not
+If loc1cc0
+Push "\x01", "\x01"
+GetVariable
+Push 41
+Add
+SetVariable
+Jump loc1b28
+loc1cc0:Push "\x01"
+GetVariable
+Push 235
+Equals
+Not
+If loc1cf2
+Push "\x01", "\x01"
+GetVariable
+Push 189
+Add
+SetVariable
+Jump loc0175
+loc1cf2:Push "\x01"
+GetVariable
+Push 140
+Equals
+Not
+If loc1fa9
+Push "\x01", "\x01"
+GetVariable
+Push 796
+Add
+SetVariable
+ConstantPool "_global", "mx", "Object", "managers", "DepthManager", "MovieClip", "prototype", "createClassChildAtDepth", "createChildAtDepth", "setDepthTo", "setDepthAbove", "setDepthBelow", "findNextAvailableDepth", "shuffleDepths", "getDepthByFlag", "buildDepthTable", "ASSetPropFlags", "sortFunction", "getDepth", "test", "reservedDepth", "createClassObjectAtDepth", "kCursor", "kTooltip", "kTopmost", "holder", "kTop", "createObjectAtDepth", "_childCounter", "down", "kBottom", "up", "depthChild", "createClassObject", "_topmost", "createObject", "_parent", "swapDepths", "highestDepth", "lowestDepth", "numberOfAuthortimeLayers", "Math", "min", "Array", "push", "sort", "length", "pop", "shift", "kNotopmost", "movieclip", "object", "__getTextFormat", "max", "reserved", "_root", "createEmptyMovieClip", "__depthManager"
+Jump loc1b28
+loc1fa9:Push "\x01"
+GetVariable
+Push 110
+Equals
+Not
+If loc1ffc
+Push "\x01", "\x01"
+GetVariable
+Push 125
+Add
+SetVariable
+If loc1fe0
+Jump loc1ff7
+loc1fe0:Push "\x01", "\x01"
+GetVariable
+Push 189
+Add
+SetVariable
+loc1ff7:Jump loc1b28
+loc1ffc:Push "\x01"
+GetVariable
+Push 613
+Equals
+Not
+If loc2039
+Push "\x01", "\x01"
+GetVariable
+Push 420
+Subtract
+SetVariable
+Push "\x0f", 1
+Jump loc1b28
+loc2039:Push "\x01"
+GetVariable
+Push 191
+Equals
+Not
+If loc206b
+Push "\x01", "\x01"
+GetVariable
+Push 408
+Add
+SetVariable
+Jump loc0005
+loc206b:Push "\x01"
+GetVariable
+Push 936
+Equals
+Not
+If loc20a2
+Push "\x01", "\x01"
+GetVariable
+Push 369
+Subtract
+SetVariable
+Jump loc1ac2
+loc209d:Jump loc2221
+loc20a2:Push "\x01"
+GetVariable
+Push 424
+Equals
+Not
+If loc20d4
+Push "\x01", "\x01"
+GetVariable
+Push 189
+Add
+SetVariable
+Jump loc1b28
+loc20d4:Push "\x01"
+GetVariable
+Push 567
+Equals
+Not
+If loc2106
+Push "\x01", "\x01"
+GetVariable
+Push 567
+Subtract
+SetVariable
+Jump loc2221
+loc2106:Push "\x01"
+GetVariable
+Push 893
+Equals
+Not
+If loc214d
+Push "\x01", "\x01"
+GetVariable
+Push 280
+Subtract
+SetVariable
+ConstantPool "{invalid_utf8=211}R8", "{invalid_utf8=189}e", "E\x0b", "{invalid_utf8=144}e{invalid_utf8=151}{invalid_utf8=161}W"
+Jump loc1b28
+loc214d:Push "\x01"
+GetVariable
+Push 696
+Equals
+Not
+If loc21a0
+Push "\x01", "\x01"
+GetVariable
+Push 505
+Subtract
+SetVariable
+If loc2184
+Jump loc219b
+loc2184:Push "\x01", "\x01"
+GetVariable
+Push 408
+Add
+SetVariable
+loc219b:Jump loc1b28
+loc21a0:Push "\x01"
+GetVariable
+Push 813
+Equals
+Not
+If loc21e5
+Push "\x01", "\x01"
+GetVariable
+Push 173
+Subtract
+SetVariable
+ConstantPool "%.l{invalid_utf8=194}", "{invalid_utf8=249}\x1b", "B{invalid_utf8=158}\x06{invalid_utf8=244} "
+Jump loc1b28
+loc21e5:Push "\x01"
+GetVariable
+Push 640
+Equals
+Not
+If loc221c
+Push "\x01", "\x01"
+GetVariable
+Push 530
+Subtract
+SetVariable
+Push true
+Jump loc1b28
+loc221c:Jump loc1b33
+loc2221:

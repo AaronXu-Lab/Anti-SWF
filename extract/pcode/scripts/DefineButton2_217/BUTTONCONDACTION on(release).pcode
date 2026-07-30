@@ -1,0 +1,5 @@
+on(release){
+   Push 0, "submit"
+   CallFunction
+   Pop
+}

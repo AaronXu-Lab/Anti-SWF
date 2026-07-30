@@ -1,0 +1,8 @@
+Stop
+Push 7, 1, "intervalDemo"
+CallFunction
+Pop
+Push "btn_next"
+GetVariable
+Push "_visible", false
+SetMember

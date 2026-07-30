@@ -1,0 +1,9 @@
+on(release){
+   Push "this"
+   GetVariable
+   Push "mouse_mc"
+   GetMember
+   Push "_visible", false
+   SetMember
+   Play
+}

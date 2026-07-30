@@ -1,0 +1,16 @@
+Push "Demo"
+GetVariable
+Push "enabled"
+GetMember
+Not
+Not
+If loc0053
+Push "this"
+GetVariable
+Push "_parent"
+GetMember
+Push "btn_next"
+GetMember
+Push "_visible", true
+SetMember
+loc0053:

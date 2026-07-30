@@ -1,0 +1,6 @@
+onClipEvent(load){
+   Push "scoreStr", "score1"
+   SetVariable
+   Push "gameId", 202154
+   SetVariable
+}

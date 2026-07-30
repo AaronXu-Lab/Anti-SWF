@@ -1,0 +1,10 @@
+on(release){
+   Push "snd_btn", 1, "this"
+   GetVariable
+   Push "sound"
+   GetMember
+   Push "play"
+   CallMethod
+   Pop
+   GoToLabel "help"
+}

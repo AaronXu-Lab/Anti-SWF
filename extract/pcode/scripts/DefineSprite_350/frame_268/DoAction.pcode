@@ -1,0 +1,9 @@
+Stop
+Push "interval"
+GetVariable
+Push 1, "clearInterval"
+CallFunction
+Pop
+Push 8, 1, "intervalDemo"
+CallFunction
+Pop

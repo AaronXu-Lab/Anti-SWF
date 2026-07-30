@@ -1,0 +1,1024 @@
+Jump loc0a89
+loc0005:SetVariable
+Jump loc1200
+loc000b:Unknown_79
+Jump loc1200
+loc0011:Jump loc0016
+loc0016:GetVariable
+Return
+loc0018:Push "this"
+GetVariable
+Push "_parent"
+GetMember
+Push "mouse_mc"
+GetMember
+Push "_visible", false
+SetMember
+Push "snd_run", 1, "this"
+GetVariable
+Push "_parent"
+GetMember
+Push "_parent"
+GetMember
+Push "sound"
+GetMember
+Push "stop"
+CallMethod
+Pop
+Push "snd_ropeup", 1, "this"
+GetVariable
+Push "_parent"
+GetMember
+Push "_parent"
+GetMember
+Push "sound"
+GetMember
+Push "play"
+CallMethod
+Pop
+Jump loc03d0
+loc0083:Jump loc0018
+loc0088:Push "\x01"
+Jump loc0099
+loc0093:Unknown_03
+Jump loc1200
+loc0099:GetVariable
+Push 172
+Equals
+Not
+If loc00ca
+Push "\x01", "\x01"
+GetVariable
+Push 334
+Add
+SetVariable
+Push true
+Jump loc0088
+loc00ca:Push "\x01"
+GetVariable
+Push 690
+Equals
+Not
+If loc0107
+Push "\x01", "\x01"
+GetVariable
+Push 546
+Subtract
+SetVariable
+Push "\x0f", 1
+Jump loc0088
+loc0107:Push "\x01"
+GetVariable
+Push 748
+Equals
+Not
+If loc014a
+Push "\x01", "\x01"
+GetVariable
+Push 58
+Subtract
+SetVariable
+ConstantPool "{invalid_utf8=137}\x1a", "��{invalid_utf8=197}{invalid_utf8=236}"
+Jump loc0088
+loc014a:Push "\x01"
+GetVariable
+Push 144
+Equals
+Not
+If loc017d
+Push "\x01", "\x01"
+GetVariable
+Push 257
+Add
+SetVariable
+DefineLocal
+Jump loc0088
+loc017d:Push "\x01"
+GetVariable
+Push 505
+Equals
+Not
+If loc01d0
+Push "\x01", "\x01"
+GetVariable
+Push 46
+Add
+SetVariable
+If loc01b4
+Jump loc01cb
+loc01b4:Push "\x01", "\x01"
+loc01c0:GetVariable
+Push 243
+Add
+SetVariable
+loc01cb:Jump loc0088
+loc01d0:Push "\x01"
+GetVariable
+Push 506
+Equals
+Not
+If loc0223
+Push "\x01", "\x01"
+GetVariable
+Push 52
+Add
+SetVariable
+If loc0207
+Jump loc021e
+loc0207:Push "\x01", "\x01"
+GetVariable
+Push 248
+Subtract
+SetVariable
+loc021e:Jump loc0088
+loc0223:Push "\x01"
+GetVariable
+Push 310
+Equals
+Not
+If loc0255
+Push "\x01", "\x01"
+GetVariable
+Push 380
+Add
+SetVariable
+Jump loc0088
+loc0255:Push "\x01"
+GetVariable
+Push 558
+Equals
+Not
+If loc0287
+Push "\x01", "\x01"
+GetVariable
+Push 248
+Subtract
+SetVariable
+Jump loc000b
+loc0287:Push "\x01"
+GetVariable
+Push 401
+Equals
+Not
+If loc02bf
+Push "\x01", "\x01"
+GetVariable
+Push 316
+Subtract
+SetVariable
+Push "\x0f"
+Jump loc0088
+loc02bf:Push "\x01"
+GetVariable
+Push 85
+Equals
+Not
+If loc02f2
+Push "\x01", "\x01"
+GetVariable
+Push 89
+Add
+SetVariable
+GetVariable
+Jump loc0088
+loc02f2:Push "\x01"
+GetVariable
+Push 174
+Equals
+Not
+If loc0325
+Push "\x01", "\x01"
+GetVariable
+Push 331
+Add
+SetVariable
+Not
+Jump loc0088
+loc0325:Push "\x01"
+GetVariable
+Push 551
+Equals
+Not
+If loc039e
+Push "\x01", "\x01"
+GetVariable
+Push 243
+Add
+SetVariable
+ConstantPool "this", "_parent", "mouse_mc", "_visible", "snd_run", "sound", "stop", "snd_ropeup", "play"
+Jump loc0088
+loc039e:Push "\x01"
+GetVariable
+Push 794
+Equals
+Not
+If loc03d5
+Push "\x01", "\x01"
+GetVariable
+Push 187
+Subtract
+SetVariable
+Jump loc0083
+loc03d0:Jump loc040c
+loc03d5:Push "\x01"
+GetVariable
+Push 607
+Equals
+Not
+If loc0407
+Push "\x01", "\x01"
+GetVariable
+Push 607
+Subtract
+SetVariable
+Jump loc1200
+loc0407:Jump loc0093
+loc040c:Jump loc1200
+loc0411:Unknown_03
+Jump loc1200
+loc0417:MBStringExtract
+If loc1200
+Jump loc0a45
+loc0422:Push "{invalid_utf8=149}z{invalid_utf8=238}", 1, "l{invalid_utf8=227}{invalid_utf8=166}l"
+GetVariable
+Push constant2
+GetMember
+Push constant2
+GetMember
+Push constant3
+GetMember
+Push constant4
+CallMethod
+Pop
+Jump loc04c6
+loc044d:Jump loc0422
+loc0452:Push "\x01"
+Jump loc0463
+loc045d:Unknown_03
+Jump loc1200
+loc0463:GetVariable
+Push 814
+Equals
+Not
+If loc0494
+Push "\x01", "\x01"
+GetVariable
+Push 501
+Subtract
+SetVariable
+Push true
+Jump loc0452
+loc0494:Push "\x01"
+GetVariable
+Push 484
+Equals
+Not
+If loc04cb
+Push "\x01", "\x01"
+GetVariable
+Push 349
+Add
+SetVariable
+Jump loc044d
+loc04c6:Jump loc0a40
+loc04cb:Push "\x01"
+GetVariable
+Push 275
+Equals
+Not
+If loc04fe
+Push "\x01", "\x01"
+GetVariable
+Push 364
+Add
+SetVariable
+Not
+Jump loc0452
+loc04fe:Push "\x01"
+GetVariable
+Push 313
+Equals
+Not
+If loc0551
+Push "\x01", "\x01"
+GetVariable
+Push 46
+Subtract
+SetVariable
+If loc0535
+Jump loc054c
+loc0535:Push "\x01", "\x01"
+GetVariable
+Push 139
+Add
+SetVariable
+loc054c:Jump loc0452
+loc0551:Push "\x01"
+GetVariable
+Push 570
+Equals
+Not
+If loc0583
+Push "\x01", "\x01"
+GetVariable
+Push 238
+Add
+SetVariable
+Jump loc0011
+loc0583:Push "\x01"
+GetVariable
+Push 78
+Equals
+Not
+If loc05b6
+Push "\x01", "\x01"
+GetVariable
+Push 197
+Add
+SetVariable
+GetVariable
+Jump loc0452
+loc05b6:Push "\x01"
+GetVariable
+Push 415
+Equals
+Not
+If loc05ee
+Push "\x01", "\x01"
+GetVariable
+Push 337
+Subtract
+loc05e2:SetVariable
+Push "\x0f"
+Jump loc0452
+loc05ee:Push "\x01"
+GetVariable
+Push 593
+Equals
+Not
+If loc0621
+Push "\x01", "\x01"
+GetVariable
+Push 178
+Subtract
+SetVariable
+DefineLocal
+Jump loc0452
+loc0621:Push "\x01"
+GetVariable
+Push 923
+Equals
+Not
+If loc065e
+Push "\x01", "\x01"
+GetVariable
+Push 330
+Subtract
+SetVariable
+Push "\x0f", 1
+Jump loc0452
+loc065e:Push "\x01"
+GetVariable
+Push 808
+Equals
+Not
+If loc0690
+Push "\x01", "\x01"
+GetVariable
+Push 115
+Add
+SetVariable
+Jump loc0452
+loc0690:Push "\x01"
+GetVariable
+Push 639
+Equals
+Not
+If loc06e3
+Push "\x01", "\x01"
+GetVariable
+Push 299
+Subtract
+SetVariable
+If loc06c7
+Jump loc06de
+loc06c7:Push "\x01", "\x01"
+GetVariable
+Push 144
+Add
+SetVariable
+loc06de:Jump loc0452
+loc06e3:Push "\x01"
+GetVariable
+Push 340
+Equals
+Not
+If loc0740
+Push "\x01", "\x01"
+GetVariable
+Push 144
+Add
+SetVariable
+ConstantPool "snd_ropecatch", "this", "_parent", "sound", "play"
+Jump loc0452
+loc0740:Push "\x01"
+GetVariable
+Push 267
+Equals
+Not
+If loc0772
+Push "\x01", "\x01"
+GetVariable
+Push 139
+Add
+SetVariable
+Jump loc0411
+loc0772:Push "\x01"
+GetVariable
+Push 833
+Equals
+Not
+If loc07a4
+Push "\x01", "\x01"
+GetVariable
+Push 833
+Subtract
+SetVariable
+Jump loc1200
+loc07a4:Push "\x01"
+GetVariable
+Push 406
+Equals
+Not
+If loc07d6
+Push "\x01", "\x01"
+GetVariable
+Push 334
+Add
+SetVariable
+Jump loc0452
+loc07d6:Push "\x01"
+GetVariable
+Push 475
+Equals
+Not
+If loc0808
+Push "\x01", "\x01"
+GetVariable
+Push 434
+Add
+SetVariable
+Jump loc01c0
+loc0808:Push "\x01"
+GetVariable
+Push 936
+Equals
+Not
+If loc085b
+Push "\x01", "\x01"
+GetVariable
+Push 461
+Subtract
+SetVariable
+If loc083f
+Jump loc0856
+loc083f:Push "\x01", "\x01"
+GetVariable
+Push 434
+Add
+SetVariable
+loc0856:Jump loc0452
+loc085b:Push "\x01"
+GetVariable
+Push 583
+Equals
+Not
+If loc08ae
+Push "\x01", "\x01"
+GetVariable
+Push 13
+Subtract
+SetVariable
+If loc0892
+Jump loc08a9
+loc0892:Push "\x01", "\x01"
+GetVariable
+Push 238
+Add
+SetVariable
+loc08a9:Jump loc0452
+loc08ae:Push "\x01"
+GetVariable
+Push 678
+Equals
+Not
+If loc08fb
+Push "\x01", "\x01"
+GetVariable
+Push 62
+Add
+SetVariable
+ConstantPool "2{invalid_utf8=198}\x18{invalid_utf8=234}Y", "nı9", "{invalid_utf8=214}\x1cO{invalid_utf8=138}", "\x1a{invalid_utf8=242}Rz0"
+Jump loc0452
+loc08fb:Push "\x01"
+GetVariable
+Push 209
+Equals
+Not
+If loc094b
+Push "\x01", "\x01"
+GetVariable
+Push 714
+Add
+SetVariable
+ConstantPool ">2|{invalid_utf8=204}h", "��\r{invalid_utf8=204}C", "{invalid_utf8=130}\x0e", "2k", "4{invalid_utf8=184}"
+Jump loc0452
+loc094b:Push "\x01"
+GetVariable
+Push 909
+Equals
+Not
+If loc097d
+Push "\x01", "\x01"
+GetVariable
+Push 682
+Subtract
+SetVariable
+Jump loc0452
+loc097d:Push "\x01"
+GetVariable
+Push 740
+Equals
+Not
+If loc09b4
+Push "\x01", "\x01"
+GetVariable
+Push 196
+Add
+SetVariable
+Push true
+Jump loc0452
+loc09b4:Push "\x01"
+GetVariable
+Push 675
+Equals
+Not
+If loc0a04
+Push "\x01", "\x01"
+GetVariable
+Push 448
+Subtract
+SetVariable
+ConstantPool "8{invalid_utf8=252}J", "{invalid_utf8=224}7{invalid_utf8=151}{invalid_utf8=189}{invalid_utf8=222}", "{invalid_utf8=242}", ".{invalid_utf8=227}{invalid_utf8=249}{invalid_utf8=194}\x0f", "\x19{invalid_utf8=243}{invalid_utf8=178}(&"
+Jump loc0452
+loc0a04:Push "\x01"
+GetVariable
+Push 227
+Equals
+Not
+If loc0a3b
+Push "\x01", "\x01"
+GetVariable
+Push 356
+Add
+SetVariable
+Push true
+Jump loc0452
+loc0a3b:Jump loc045d
+loc0a40:Jump loc1200
+loc0a45:Jump loc1200
+loc0a4a:Jump loc1200
+If loc1200
+Jump loc1200
+loc0a59:Push "snd_shoot", 1, "this"
+GetVariable
+Push "_parent"
+GetMember
+Push "_parent"
+GetMember
+Push "sound"
+GetMember
+Push "play"
+CallMethod
+Pop
+Jump loc11c4
+loc0a84:Jump loc0a59
+loc0a89:DefineFunction "\x04\x05", 0 {
+Push "\x03", 1, 511
+Modulo
+Push true
+Multiply
+SetVariable
+Push "\x03", "\x01"
+If loc0ac7
+Jump loc0ac7
+loc0ac7:GetVariable
+Return
+}
+Push "\x01", 180, 0, "\x04\x05"
+CallFunction
+Add2
+DefineLocal
+loc0aea:Push "\x01"
+Jump loc0afb
+loc0af5:Unknown_03
+Jump loc1200
+loc0afb:GetVariable
+Push 181
+Equals
+Not
+If loc0b2c
+Push "\x01", "\x01"
+GetVariable
+Push 734
+Add
+SetVariable
+Push true
+Jump loc0aea
+loc0b2c:Push "\x01"
+GetVariable
+Push 945
+Equals
+Not
+If loc0b63
+Push "\x01", "\x01"
+GetVariable
+Push 839
+Subtract
+SetVariable
+Push true
+Jump loc0aea
+loc0b63:Push "\x01"
+GetVariable
+Push 644
+Equals
+Not
+If loc0bb6
+Push "\x01", "\x01"
+GetVariable
+Push 52
+Add
+SetVariable
+If loc0b9a
+Jump loc0bb1
+loc0b9a:Push "\x01", "\x01"
+GetVariable
+Push 435
+Subtract
+SetVariable
+loc0bb1:Jump loc0aea
+loc0bb6:Push "\x01"
+GetVariable
+Push 946
+Equals
+Not
+If loc0c09
+Push "\x01", "\x01"
+GetVariable
+Push 842
+Subtract
+SetVariable
+If loc0bed
+Jump loc0c04
+loc0bed:Push "\x01", "\x01"
+GetVariable
+Push 182
+Add
+SetVariable
+loc0c04:Jump loc0aea
+loc0c09:Push "\x01"
+GetVariable
+Push 6
+Equals
+Not
+If loc0c4a
+Push "\x01", "\x01"
+GetVariable
+Push 269
+Add
+SetVariable
+ConstantPool "{invalid_utf8=230}V\"\\", "w{invalid_utf8=139}\x1d{"
+Jump loc0aea
+loc0c4a:Push "\x01"
+GetVariable
+Push 51
+Equals
+Not
+If loc0c81
+Push "\x01", "\x01"
+GetVariable
+Push 895
+Add
+SetVariable
+Push true
+Jump loc0aea
+loc0c81:Push "\x01"
+GetVariable
+Push 728
+Equals
+Not
+If loc0cd8
+Push "\x01", "\x01"
+GetVariable
+Push 217
+Add
+SetVariable
+ConstantPool "{invalid_utf8=130}{invalid_utf8=216}X{invalid_utf8=212}{invalid_utf8=213}", ",{invalid_utf8=132}{invalid_utf8=187}d{invalid_utf8=161}", "pie\x15{invalid_utf8=153}", "|V", "d{invalid_utf8=239}%\x1c", "\x1b{invalid_utf8=197}{invalid_utf8=217}{invalid_utf8=239}{invalid_utf8=221}"
+Jump loc0aea
+loc0cd8:Push "\x01"
+GetVariable
+Push 286
+Equals
+Not
+If loc0d0a
+Push "\x01", "\x01"
+GetVariable
+Push 11
+Subtract
+SetVariable
+Jump loc0aea
+loc0d0a:Push "\x01"
+GetVariable
+Push 915
+Equals
+Not
+If loc0d5d
+Push "\x01", "\x01"
+GetVariable
+Push 650
+Subtract
+SetVariable
+If loc0d41
+Jump loc0d58
+loc0d41:Push "\x01", "\x01"
+GetVariable
+Push 352
+Add
+SetVariable
+loc0d58:Jump loc0aea
+loc0d5d:Push "\x01"
+GetVariable
+Push 948
+Equals
+Not
+If loc0d90
+Push "\x01", "\x01"
+GetVariable
+Push 939
+Subtract
+SetVariable
+DefineLocal
+Jump loc0aea
+loc0d90:Push "\x01"
+GetVariable
+Push 106
+Equals
+Not
+If loc0de3
+Push "\x01", "\x01"
+GetVariable
+Push 201
+Add
+SetVariable
+If loc0dc7
+Jump loc0dde
+loc0dc7:Push "\x01", "\x01"
+GetVariable
+Push 450
+Add
+SetVariable
+loc0dde:Jump loc0aea
+loc0de3:Push "\x01"
+GetVariable
+Push 97
+Equals
+Not
+If loc0e20
+Push "\x01", "\x01"
+GetVariable
+Push 851
+Add
+SetVariable
+Push "\x0f", 1
+Jump loc0aea
+loc0e20:Push "\x01"
+GetVariable
+Push 735
+Equals
+Not
+If loc0e73
+Push "\x01", "\x01"
+GetVariable
+Push 684
+Subtract
+SetVariable
+ConstantPool "{invalid_utf8=224} ", "k5{invalid_utf8=213}b$", "ƶ{invalid_utf8=193}", "{invalid_utf8=232}3{invalid_utf8=181}", "{invalid_utf8=174}\x13{invalid_utf8=213}{invalid_utf8=227}{invalid_utf8=208}", "{invalid_utf8=176}<6{invalid_utf8=235}"
+Jump loc0aea
+loc0e73:Push "\x01"
+GetVariable
+Push 265
+Equals
+Not
+If loc0ea5
+Push "\x01", "\x01"
+GetVariable
+Push 352
+Add
+SetVariable
+Jump loc0005
+loc0ea5:Push "\x01"
+GetVariable
+Push 617
+Equals
+Not
+If loc0ed7
+Push "\x01", "\x01"
+GetVariable
+Push 328
+Add
+SetVariable
+Jump loc0aea
+loc0ed7:Push "\x01"
+GetVariable
+Push 307
+Equals
+Not
+If loc0f09
+Push "\x01", "\x01"
+GetVariable
+Push 450
+Add
+SetVariable
+Jump loc0a4a
+loc0f09:Push "\x01"
+GetVariable
+Push 757
+Equals
+Not
+If loc0f3b
+Push "\x01", "\x01"
+GetVariable
+Push 706
+Subtract
+SetVariable
+Jump loc0aea
+loc0f3b:Push "\x01"
+GetVariable
+Push 104
+Equals
+Not
+If loc0f6d
+Push "\x01", "\x01"
+GetVariable
+Push 182
+Add
+SetVariable
+Jump loc0417
+loc0f6d:Push "\x01"
+GetVariable
+Push 275
+Equals
+Not
+If loc0fa4
+Push "\x01", "\x01"
+GetVariable
+Push 77
+Add
+SetVariable
+Push true
+Jump loc0aea
+loc0fa4:Push "\x01"
+GetVariable
+Push 352
+Equals
+Not
+If loc0ff7
+Push "\x01", "\x01"
+GetVariable
+Push 204
+Add
+SetVariable
+If loc0fdb
+Jump loc0ff2
+loc0fdb:Push "\x01", "\x01"
+GetVariable
+Push 128
+Add
+SetVariable
+loc0ff2:Jump loc0aea
+loc0ff7:Push "\x01"
+GetVariable
+Push 556
+Equals
+Not
+If loc1029
+Push "\x01", "\x01"
+GetVariable
+Push 128
+Add
+SetVariable
+Jump loc05e2
+loc1029:Push "\x01"
+GetVariable
+Push 684
+Equals
+Not
+If loc105b
+Push "\x01", "\x01"
+GetVariable
+Push 587
+Subtract
+SetVariable
+Jump loc0aea
+loc105b:Push "\x01"
+GetVariable
+Push 269
+Equals
+Not
+If loc109b
+Push "\x01", "\x01"
+GetVariable
+Push 172
+Subtract
+SetVariable
+ConstantPool "{invalid_utf8=149}z{invalid_utf8=238}", "l{invalid_utf8=227}{invalid_utf8=166}l"
+Jump loc0aea
+loc109b:Push "\x01"
+GetVariable
+Push 9
+Equals
+Not
+If loc10d3
+Push "\x01", "\x01"
+GetVariable
+Push 795
+Add
+SetVariable
+Push "\x0f"
+Jump loc0aea
+loc10d3:Push "\x01"
+GetVariable
+Push 804
+Equals
+Not
+If loc1106
+Push "\x01", "\x01"
+GetVariable
+Push 33
+Subtract
+SetVariable
+GetVariable
+Jump loc0aea
+loc1106:Push "\x01"
+GetVariable
+Push 771
+Equals
+Not
+If loc1139
+Push "\x01", "\x01"
+GetVariable
+Push 127
+Subtract
+SetVariable
+Not
+Jump loc0aea
+loc1139:Push "\x01"
+GetVariable
+Push 696
+Equals
+Not
+If loc1192
+Push "\x01", "\x01"
+GetVariable
+Push 435
+Subtract
+SetVariable
+ConstantPool "snd_shoot", "this", "_parent", "sound", "play"
+Jump loc0aea
+loc1192:Push "\x01"
+GetVariable
+Push 261
+Equals
+Not
+If loc11c9
+Push "\x01", "\x01"
+GetVariable
+Push 170
+Subtract
+SetVariable
+Jump loc0a84
+loc11c4:Jump loc1200
+loc11c9:Push "\x01"
+GetVariable
+Push 91
+Equals
+Not
+If loc11fb
+Push "\x01", "\x01"
+GetVariable
+Push 91
+Subtract
+SetVariable
+Jump loc1200
+loc11fb:Jump loc0af5
+loc1200:

@@ -1,0 +1,1505 @@
+Jump loc1330
+loc0005:Jump loc1c13
+loc000a:PushDuplicate
+NextFrame
+Unknown_01
+ToggleQuality
+StackSwap
+GetMember
+SetMember
+Push register1, constant78, register1, constant71
+GetMember
+SetMember
+Push register1, constant79, register1, constant80
+GetMember
+SetMember
+Push register1, constant81, register1, constant82
+GetMember
+SetMember
+Jump loc003d
+loc003d:Push register1, constant27, register2
+SetMember
+SetMember
+Push register2, constant89
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "state" {
+Push register2, register1, constant27
+GetMember
+Equals2
+Not
+Not
+If loc0095
+Push register2, 1, register1, constant28
+CallMethod
+Pop
+Push 0, register1, constant90
+CallMethod
+Pop
+}
+loc0095:SetMember
+Push register2, constant91
+DefineFunction2 "", 1, 2, false, false, true, false, true, false, false, true, false, 0, "Void" {
+Push 0, register1, constant49
+CallMethod
+Pop
+}
+SetMember
+Push register2, constant92
+DefineFunction2 "", 1, 2, false, false, true, false, true, false, false, true, false, 0, "Void" {
+Push register1, constant26
+GetMember
+Not
+If loc0111
+Push register1, constant26, false
+SetMember
+Push register1, constant18
+GetMember
+Push constant93, true
+SetMember
+Push register1, constant45
+GetMember
+Push constant93, true
+SetMember
+loc0111:Push 0, register1, constant91
+CallMethod
+Pop
+}
+SetMember
+Push register2, constant35
+DefineFunction2 "", 1, 2, false, false, true, false, true, false, false, true, false, 0, "Void" {
+Push register1, constant27
+GetMember
+Return
+}
+SetMember
+Push register2, constant94
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "val" {
+Push register1, constant95, register2
+SetMember
+Push register1, constant95
+GetMember
+Push false
+Equals2
+Not
+If loc018b
+Push false, 1, register1, constant89
+CallMethod
+Pop
+}
+loc018b:SetMember
+Push register2, constant96
+DefineFunction2 "", 1, 2, false, false, true, false, true, false, false, true, false, 0, "Void" {
+Push register1, constant95
+GetMember
+Return
+}
+SetMember
+Push register2, constant97
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "val" {
+Push register2, 1, register1, constant94
+CallMethod
+Pop
+Push 0, register1, constant98
+CallMethod
+Return
+}
+SetMember
+Push register2, constant98
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0, register1, constant96
+CallMethod
+Return
+}
+SetMember
+Push register2, constant99
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "val" {
+Push register2, 1, register1, constant100
+CallMethod
+Pop
+Push 0, register1, constant101
+CallMethod
+Return
+}
+SetMember
+Push register2, constant101
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0, register1, constant102
+CallMethod
+Return
+}
+SetMember
+Push register2, constant103
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "val" {
+Push register2, 1, register1, constant100
+CallMethod
+Pop
+Push 0, register1, constant104
+CallMethod
+Return
+}
+SetMember
+Push register2, constant104
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0, register1, constant102
+CallMethod
+Return
+}
+SetMember
+Push register2, constant100
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "val" {
+Push register1, constant95
+GetMember
+Not
+If loc0305
+Push register2, 1, register1, constant89
+CallMethod
+Pop
+Jump loc0332
+loc0305:Push register1, constant26
+GetMember
+If loc031f
+Push register1, constant27
+GetMember
+Jump loc0324
+loc031f:Push register2
+loc0324:Push 1, register1, constant89
+CallMethod
+Pop
+}
+loc0332:SetMember
+Push register2, constant102
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, constant27
+GetMember
+Return
+}
+SetMember
+Push register2, constant105
+DefineFunction2 "", 1, 4, false, false, false, true, true, false, false, true, false, 3, "val" {
+Push register1, constant59
+GetMember
+Push register3
+Equals2
+Not
+Not
+If loc039d
+Push register3, 1, register2, constant105
+CallMethod
+Pop
+Push 0, register1, constant90
+CallMethod
+Pop
+}
+loc039d:SetMember
+Push register2, constant106
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 0, "Void" {
+Push 0, register1, constant107
+CallMethod
+Pop
+Push register1, constant61, constant62
+SetMember
+Push 0, register1, constant49
+CallMethod
+Pop
+Push constant108, constant109, 1
+InitObject
+Push 1, register1, constant110
+CallMethod
+Pop
+Push register1, constant111
+GetMember
+Not
+If loc0430
+Push register1, constant112, constant113, 1, register1, constant114
+CallMethod
+Push constant115, register1, 3, constant116
+CallFunction
+SetMember
+}
+loc0430:SetMember
+Push register2, constant115
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 0, "Void" {
+Push constant108, constant109, 1
+InitObject
+Push 1, register1, constant110
+CallMethod
+Pop
+Push register1, constant111
+GetMember
+Not
+If loc04a9
+Push register1, constant112
+GetMember
+Push 1, constant117
+CallFunction
+Pop
+Push register1, constant112, constant118, 1, register1, constant114
+CallMethod
+Push constant119, register1, 3, constant116
+CallFunction
+SetMember
+}
+loc04a9:SetMember
+Push register2, constant119
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 0, "Void" {
+Push constant108, constant109, 1
+InitObject
+Push 1, register1, constant110
+CallMethod
+Pop
+Push 0, constant120
+CallFunction
+Pop
+}
+SetMember
+Push register2, constant121
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 0, "Void" {
+Push 0, register1, constant122
+CallMethod
+Pop
+Push register1, constant61, constant123
+SetMember
+Push register1, constant112
+GetMember
+Push undefined
+Equals2
+Not
+Not
+If loc0553
+Push register1, constant112
+GetMember
+Push 1, constant117
+CallFunction
+Pop
+Push register1, constant112
+Delete
+Pop
+loc0553:Push 0, register1, constant96
+CallMethod
+Not
+If loc058f
+Push 0, register1, constant35
+CallMethod
+Not
+Push 1, register1, constant89
+CallMethod
+Pop
+Jump loc05a1
+loc058f:Push 0, register1, constant49
+CallMethod
+Pop
+loc05a1:Push constant108, constant124, 1
+InitObject
+Push 1, register1, constant110
+CallMethod
+Pop
+}
+SetMember
+Push register2, constant125
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 0, "Void" {
+Push register1, constant61, constant126
+SetMember
+Push 0, register1, constant49
+CallMethod
+Pop
+Push constant108, constant127, 1
+InitObject
+Push 1, register1, constant110
+CallMethod
+Pop
+}
+SetMember
+Push register2, constant128
+DefineFunction2 "", 1, 2, false, false, true, false, true, false, false, true, false, 0, "Void" {
+Push register1, constant61
+GetMember
+Push constant126
+Equals2
+Not
+Not
+If loc0651
+Push 0, register1, constant106
+CallMethod
+Pop
+Push undefined
+Return
+loc0651:Push register1, constant61, constant62
+SetMember
+Push 0, register1, constant49
+CallMethod
+Pop
+}
+SetMember
+Push register2, constant129
+DefineFunction2 "", 1, 2, false, false, true, false, true, false, false, true, false, 0, "Void" {
+Push 0, register1, constant122
+CallMethod
+Pop
+Push register1, constant61, constant126
+SetMember
+Push register1, constant112
+GetMember
+Push undefined
+Equals2
+Not
+Not
+If loc06d3
+Push register1, constant112
+GetMember
+Push 1, constant117
+CallFunction
+Pop
+Push register1, constant112
+Delete
+Pop
+}
+loc06d3:SetMember
+Push register2, constant130
+DefineFunction2 "", 1, 2, false, false, true, false, true, false, false, true, false, 0, "Void" {
+Push register1, constant61, constant123
+SetMember
+Push 0, register1, constant49
+CallMethod
+Pop
+}
+SetMember
+Push register2, constant131
+DefineFunction2 "", 1, 2, false, false, true, false, true, false, false, true, false, 0, "Void" {
+Push register1, constant61, constant126
+SetMember
+Push 0, register1, constant49
+CallMethod
+Pop
+}
+SetMember
+Push register2, constant132
+DefineFunction2 "", 1, 2, false, false, true, false, true, false, false, true, false, 0, "Void" {
+Push register1, constant25
+GetMember
+Push constant133
+GetMember
+Return
+}
+SetMember
+Push register2, constant134
+DefineFunction2 "", 1, 5, false, false, true, false, true, false, false, true, false, 3, "val" {
+Push register1, constant25
+GetMember
+TypeOf
+Push constant39
+Equals2
+Not
+If loc07be
+Push register3, 8, constant25, 3, register1, constant135
+CallMethod
+Pop
+Push register1, constant25
+GetMember
+Push constant50, register1
+SetMember
+Jump loc07ce
+loc07be:Push register1, constant25
+GetMember
+Push constant133, register3
+SetMember
+loc07ce:Push 0, register1, constant25
+GetMember
+Push constant136
+CallMethod
+StoreRegister 4
+Pop
+Push register3, 1, register4, constant137
+CallMethod
+StoreRegister 2
+Pop
+Push register1, constant25
+GetMember
+Push constant12, register2, constant138
+GetMember
+Push 5
+Add2
+SetMember
+Push register1, constant25
+GetMember
+Push constant13, register2, constant139
+GetMember
+Push 5
+Add2
+SetMember
+Push register1, constant45, register1, constant25
+GetMember
+SetMember
+Push register1, constant27
+GetMember
+Push 1, register1, constant63
+CallMethod
+Pop
+}
+SetMember
+Push register2, constant140
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, constant40
+GetMember
+Return
+}
+SetMember
+Push register2, constant141
+DefineFunction2 "", 1, 4, false, false, true, false, true, false, false, true, false, 3, "val" {
+Push register1, constant40, register3
+SetMember
+Push 0
+StoreRegister 2
+Pop
+loc08a8:Push register2, 8
+Less2
+Not
+If loc093d
+Push register1, register1, constant16
+GetMember
+Push register2
+GetMember
+Push register1, constant33
+GetMember
+Push register2
+GetMember
+Push constant37
+Add2
+SetMember
+Push register1, register1, constant16
+GetMember
+Push register2, 8
+Add2
+GetMember
+GetMember
+TypeOf
+Push constant142
+Equals2
+Not
+If loc092d
+Push register1, register1, constant16
+GetMember
+Push register2, 8
+Add2
+GetMember
+Push register1, constant33
+GetMember
+Push register2
+GetMember
+Push constant34
+Add2
+SetMember
+loc092d:Push register2
+Increment
+StoreRegister 2
+Pop
+Jump loc08a8
+loc093d:Push register1, constant40
+GetMember
+Push 1, register1, constant55
+CallMethod
+Pop
+Push register1, constant27
+GetMember
+Push 1, register1, constant28
+CallMethod
+Pop
+Push 0, register1, constant143
+CallMethod
+Pop
+Push 0, register1, constant140
+CallMethod
+Return
+}
+SetMember
+Push register2, constant144
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "e" {
+Push register2, constant145
+GetMember
+Push 32
+Equals2
+Not
+If loc09cc
+Push 0, register1, constant106
+CallMethod
+Pop
+}
+loc09cc:SetMember
+Push register2, constant146
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "e" {
+Push register2, constant145
+GetMember
+Push 32
+Equals2
+Not
+If loc0a0b
+Push 0, register1, constant121
+CallMethod
+Pop
+}
+loc0a0b:SetMember
+Push register2, constant147
+DefineFunction2 "", 1, 3, false, false, false, true, true, false, false, true, false, 0, "newFocus" {
+Push 0, register2, constant147
+CallMethod
+Pop
+Push register1, constant61
+GetMember
+Push constant126
+Equals2
+Not
+Not
+If loc0a6b
+Push register1, constant61, constant126
+SetMember
+Push 0, register1, constant49
+CallMethod
+Pop
+}
+loc0a6b:SetMember
+Push register1, constant148, "{invalid_utf8=194}{invalid_utf8=250}\r{invalid_utf8=141}"
+SetMember
+Push register1, constant149, "{invalid_utf8=156}{invalid_utf8=247}Ya"
+GetVariable
+Push "{invalid_utf8=140}{invalid_utf8=183}{invalid_utf8=163}{invalid_utf8=160}`"
+GetMember
+Push "{invalid_utf8=194}{invalid_utf8=250}\r{invalid_utf8=141}"
+GetMember
+SetMember
+Push register1, constant150, constant151
+SetMember
+Push register2, constant152, "{invalid_utf8=194}{invalid_utf8=250}\r{invalid_utf8=141}"
+SetMember
+Push register2, constant153, 4
+SetMember
+Push register2, constant64, 1
+SetMember
+Push register2, constant95, false
+SetMember
+Push register2, constant27, false
+SetMember
+Push register2, constant40, false
+SetMember
+Push register2, constant56, false
+SetMember
+Push register1, constant154, 0
+SetMember
+Push register1, constant155, 1
+SetMember
+Push register1, constant156, 2
+SetMember
+Push register1, constant157, 3
+SetMember
+Push register1, constant158, 4
+SetMember
+Push register1, constant159, 5
+SetMember
+Push register1, constant160, 6
+SetMember
+Push register1, constant161, 7
+SetMember
+Push register2, constant162, constant163
+SetMember
+Push register2, constant164, constant165
+SetMember
+Push register2, constant19, constant48
+SetMember
+Push register2, constant166, constant163
+SetMember
+Push register2, constant167, constant165
+SetMember
+Push register2, constant168, constant48
+SetMember
+Push register2, constant67, constant48
+SetMember
+Push register2, constant169, constant165
+SetMember
+Push register2, constant170, constant48
+SetMember
+Push register2, constant171, constant48
+SetMember
+Push register2, constant23, constant48
+SetMember
+Push register2, constant172, constant48
+SetMember
+Push register2, constant173, constant48
+Jump loc0bdd
+loc0bd5:NextFrame
+Unknown_02
+ToggleQuality
+Jump loc0f6a
+loc0bdd:SetMember
+Push register2, constant174, constant48
+SetMember
+Push register2, constant70, constant48
+SetMember
+Push register2, constant175, constant48
+SetMember
+Push register2, constant61, constant126
+SetMember
+Push register2, constant25, constant170
+SetMember
+Push register2, constant22, constant162
+SetMember
+Push register2, constant87, constant171
+SetMember
+Push register2, constant85, constant164
+SetMember
+Push register2, constant83, constant19
+SetMember
+Push register2, constant84, constant23
+SetMember
+Push register2, constant88, constant172
+SetMember
+Push register2, constant86, constant166
+SetMember
+Push register2, constant71, constant173
+SetMember
+Push register2, constant68, constant167
+SetMember
+Push register2, constant80, constant174
+SetMember
+Push register2, constant75, constant168
+SetMember
+Push register2, constant69, constant67
+SetMember
+Push register2, constant72, constant70
+SetMember
+Push register2, constant77, constant169
+SetMember
+Push register2, constant82, constant175
+SetMember
+Push register2, constant21, "{invalid_utf8=156}{invalid_utf8=247}Ya"
+GetVariable
+Push "{invalid_utf8=140}{invalid_utf8=183}{invalid_utf8=163}{invalid_utf8=160}`"
+GetMember
+Push "{invalid_utf8=194}{invalid_utf8=250}\r{invalid_utf8=141}"
+GetMember
+Push constant7
+GetMember
+Push constant83
+GetMember
+SetMember
+Push register2, constant24, "{invalid_utf8=156}{invalid_utf8=247}Ya"
+GetVariable
+Push "{invalid_utf8=140}{invalid_utf8=183}{invalid_utf8=163}{invalid_utf8=160}`"
+GetMember
+Push "{invalid_utf8=194}{invalid_utf8=250}\r{invalid_utf8=141}"
+GetMember
+Push constant7
+GetMember
+Push constant84
+GetMember
+SetMember
+Push register2, constant73, "{invalid_utf8=156}{invalid_utf8=247}Ya"
+GetVariable
+Push "{invalid_utf8=140}{invalid_utf8=183}{invalid_utf8=163}{invalid_utf8=160}`"
+GetMember
+Push "{invalid_utf8=194}{invalid_utf8=250}\r{invalid_utf8=141}"
+GetMember
+Push constant7
+GetMember
+Push constant22
+GetMember
+SetMember
+Push register2, constant74, "{invalid_utf8=156}{invalid_utf8=247}Ya"
+GetVariable
+Push "{invalid_utf8=140}{invalid_utf8=183}{invalid_utf8=163}{invalid_utf8=160}`"
+GetMember
+Push "{invalid_utf8=194}{invalid_utf8=250}\r{invalid_utf8=141}"
+GetMember
+Push constant7
+GetMember
+Push constant85
+GetMember
+SetMember
+Push register2, constant76, "{invalid_utf8=156}{invalid_utf8=247}Ya"
+GetVariable
+Push "{invalid_utf8=140}{invalid_utf8=183}{invalid_utf8=163}{invalid_utf8=160}`"
+GetMember
+Push "{invalid_utf8=194}{invalid_utf8=250}\r{invalid_utf8=141}"
+GetMember
+Push constant7
+GetMember
+Push constant86
+GetMember
+SetMember
+Push register2, constant78, "{invalid_utf8=156}{invalid_utf8=247}Ya"
+GetVariable
+Push "{invalid_utf8=140}{invalid_utf8=183}{invalid_utf8=163}{invalid_utf8=160}`"
+GetMember
+Push "{invalid_utf8=194}{invalid_utf8=250}\r{invalid_utf8=141}"
+GetMember
+Push constant7
+GetMember
+Push constant25
+GetMember
+SetMember
+Push register2, constant79, "{invalid_utf8=156}{invalid_utf8=247}Ya"
+GetVariable
+Push "{invalid_utf8=140}{invalid_utf8=183}{invalid_utf8=163}{invalid_utf8=160}`"
+GetMember
+Push "{invalid_utf8=194}{invalid_utf8=250}\r{invalid_utf8=141}"
+GetMember
+Push constant7
+GetMember
+Push constant87
+GetMember
+SetMember
+Push register2, constant81, "{invalid_utf8=156}{invalid_utf8=247}Ya"
+GetVariable
+Push "{invalid_utf8=140}{invalid_utf8=183}{invalid_utf8=163}{invalid_utf8=160}`"
+GetMember
+Push "{invalid_utf8=194}{invalid_utf8=250}\r{invalid_utf8=141}"
+GetMember
+Push constant7
+GetMember
+Push constant88
+GetMember
+SetMember
+Push register2, constant26, true
+SetMember
+Push register2, constant16, constant82, constant72, constant80, constant71, constant88, constant84, constant87, constant25, constant77, constant69, constant75, constant68, constant86, constant83, constant85, constant22, 16
+InitArray
+SetMember
+Push register2, constant33, constant161, constant160, constant159, constant158, constant157, constant156, constant155, constant154, 8
+InitArray
+SetMember
+Push register2, constant17, constant76, constant21, constant74, constant73, 4
+InitArray
+SetMember
+Push register2, constant42, constant162, 0, constant164, 1, constant19, 2, constant166, 3, constant167, 4, constant168, 5, constant67, 6, constant169, 7, constant170, 0, constant171, 1, constant23, 2, constant172, 3, constant173, 4, constant174, 5, constant70, 6, constant175, 7, 16
+InitObject
+SetMember
+Push register2, constant141
+GetMember
+Push register2, constant140
+GetMember
+Push constant176, 3, register2, constant177
+CallMethod
+Push register2, constant103
+GetMember
+Push register2, constant104
+GetMember
+Push constant178, 3, register2, constant177
+CallMethod
+Push register2, constant97
+GetMember
+Push register2, constant98
+GetMember
+Push constant179, 3, register2, constant177
+CallMethod
+Push register2, constant99
+GetMember
+Push register2, constant101
+GetMember
+Push constant180, 3, register2, constant177
+CallMethod
+Push 1, null, "{invalid_utf8=156}{invalid_utf8=247}Ya"
+GetVariable
+Push "{invalid_utf8=140}{invalid_utf8=183}{invalid_utf8=163}{invalid_utf8=160}`"
+GetMember
+Push "{invalid_utf8=194}{invalid_utf8=250}\r{invalid_utf8=141}"
+GetMember
+Push constant7
+GetMember
+Push 3, constant181
+CallFunction
+Pop
+Jump loc0f5b
+loc0f5b:Jump loc0f60
+loc0f60:Jump loc1c13
+loc0f65:Jump loc1c13
+loc0f6a:Unknown_74
+InstanceOf
+BitURShift
+Unknown_73
+Unknown_74
+Jump loc1c13
+loc0f74:Push "_global"
+GetVariable
+Push "mx"
+GetMember
+Not
+Not
+If loc0f9f
+Push "_global"
+GetVariable
+Push "mx", 0, "Object"
+NewObject
+SetMember
+loc0f9f:Pop
+Push "_global"
+GetVariable
+Push "mx"
+GetMember
+Push "core"
+GetMember
+Not
+Not
+If loc0fd7
+Push "_global"
+GetVariable
+Push "mx"
+GetMember
+Push "core", 0, "Object"
+NewObject
+SetMember
+loc0fd7:Pop
+Push "_global"
+GetVariable
+Push "mx"
+GetMember
+Push "core"
+GetMember
+Push "ext"
+GetMember
+Not
+Not
+If loc101b
+Push "_global"
+GetVariable
+Push "mx"
+GetMember
+Push "core"
+GetMember
+Push "ext", 0, "Object"
+NewObject
+SetMember
+loc101b:Pop
+Push "_global"
+GetVariable
+Push "mx"
+GetMember
+Push "core"
+GetMember
+Push "ext"
+GetMember
+Push "UIComponentExtensions"
+GetMember
+Not
+Not
+If loc1325
+Push "mx"
+GetVariable
+Push "core"
+GetMember
+Push "ext"
+GetMember
+Push "UIComponentExtensions"
+DefineFunction "", 0 {
+}
+StoreRegister 1
+SetMember
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register1, "Extensions"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push "mx"
+GetVariable
+Push "core"
+GetMember
+Push "ext"
+GetMember
+Push "UIComponentExtensions"
+GetMember
+Push "bExtended"
+GetMember
+Push true
+Equals2
+Not
+If loc10b4
+Push true
+Return
+loc10b4:Push "mx"
+GetVariable
+Push "core"
+GetMember
+Push "ext"
+GetMember
+Push "UIComponentExtensions"
+GetMember
+Push "bExtended", true
+SetMember
+Push "TextField"
+GetVariable
+Push "prototype"
+GetMember
+Push "setFocus"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, 1, "Selection"
+GetVariable
+Push "setFocus"
+CallMethod
+Pop
+}
+SetMember
+Push "TextField"
+GetVariable
+Push "prototype"
+GetMember
+Push "onSetFocus"
+DefineFunction2 "", 1, 2, false, false, true, false, true, false, false, true, false, 0, "oldFocus" {
+Push register1, "tabEnabled"
+GetMember
+Push false
+Equals2
+Not
+Not
+If loc116d
+Push 0, register1, "getFocusManager"
+CallMethod
+Push "bDrawFocus"
+GetMember
+Not
+If loc116d
+Push true, 1, register1, "drawFocus"
+CallMethod
+Pop
+}
+loc116d:SetMember
+Push "TextField"
+GetVariable
+Push "prototype"
+GetMember
+Push "onKillFocus"
+DefineFunction2 "", 1, 2, false, false, true, false, true, false, false, true, false, 0, "oldFocus" {
+Push register1, "tabEnabled"
+GetMember
+Push false
+Equals2
+Not
+Not
+If loc11b9
+Push false, 1, register1, "drawFocus"
+CallMethod
+Pop
+}
+loc11b9:SetMember
+Push "TextField"
+GetVariable
+Push "prototype"
+GetMember
+Push "drawFocus", "mx"
+GetVariable
+Push "core"
+GetMember
+Push "UIComponent"
+GetMember
+Push "prototype"
+GetMember
+Push "drawFocus"
+GetMember
+SetMember
+Push "TextField"
+GetVariable
+Push "prototype"
+GetMember
+Push "getFocusManager", "mx"
+GetVariable
+Push "core"
+GetMember
+Push "UIComponent"
+GetMember
+Push "prototype"
+GetMember
+Push "getFocusManager"
+GetMember
+SetMember
+Push 0, "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "OverlappedWindows"
+GetMember
+Push "enableOverlappedWindows"
+CallMethod
+Pop
+Push 0, "mx"
+GetVariable
+Push "styles"
+GetMember
+Push "CSSSetStyle"
+GetMember
+Push "enableRunTimeCSS"
+CallMethod
+Pop
+Push 0, "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "FocusManager"
+GetMember
+Push "enableFocusManagement"
+CallMethod
+Pop
+}
+SetMember
+Push register1, "bExtended", false
+SetMember
+Push register1, "UIComponentExtended", 0, "mx"
+GetVariable
+Push "core"
+GetMember
+Push "ext"
+GetMember
+Push "UIComponentExtensions"
+GetMember
+Push "Extensions"
+CallMethod
+SetMember
+Push register1, "UIComponentDependency", "mx"
+GetVariable
+Push "core"
+GetMember
+Push "UIComponent"
+GetMember
+SetMember
+Push register1, "FocusManagerDependency", "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "FocusManager"
+GetMember
+SetMember
+Push register1, "OverlappedWindowsDependency", "mx"
+GetVariable
+Push "managers"
+GetMember
+Push "OverlappedWindows"
+GetMember
+SetMember
+Push 1, null, "mx"
+GetVariable
+Push "core"
+GetMember
+Push "ext"
+GetMember
+Push "UIComponentExtensions"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc1325:Pop
+Jump loc1bd7
+loc132b:Jump loc0f74
+loc1330:DefineFunction "\x04\x05", 0 {
+Push "\x03", 2755, 511
+Modulo
+Push true
+Multiply
+SetVariable
+Push "\x03", "\x01"
+If loc136e
+Jump loc136e
+loc136e:GetVariable
+Return
+}
+Push "\x01", 18, 0, "\x04\x05"
+CallFunction
+Add2
+DefineLocal
+loc1391:Push "\x01"
+Jump loc13a2
+loc139c:Unknown_03
+Jump loc1c13
+loc13a2:GetVariable
+Push 218
+Equals
+Not
+If loc13d3
+Push "\x01", "\x01"
+GetVariable
+Push 20
+Add
+SetVariable
+Push true
+Jump loc1391
+loc13d3:Push "\x01"
+GetVariable
+Push 259
+Equals
+Not
+If loc1406
+Push "\x01", "\x01"
+GetVariable
+Push 51
+Subtract
+SetVariable
+Not
+Jump loc1391
+loc1406:Push "\x01"
+GetVariable
+Push 223
+Equals
+Not
+If loc1448
+Push "\x01", "\x01"
+GetVariable
+Push 316
+Add
+SetVariable
+ConstantPool "@6{invalid_utf8=129}~{invalid_utf8=130}", "{invalid_utf8=224}@P\\"
+Jump loc1391
+loc1448:Push "\x01"
+GetVariable
+Push 492
+Equals
+Not
+If loc147a
+Push "\x01", "\x01"
+GetVariable
+Push 412
+Subtract
+SetVariable
+Jump loc1391
+loc147a:Push "\x01"
+GetVariable
+Push 582
+Equals
+Not
+If loc14ac
+Push "\x01", "\x01"
+GetVariable
+Push 493
+Subtract
+SetVariable
+Jump loc0005
+loc14ac:Push "\x01"
+GetVariable
+Push 616
+Equals
+Not
+If loc14de
+Push "\x01", "\x01"
+GetVariable
+Push 124
+Subtract
+SetVariable
+Jump loc0f65
+loc14de:Push "\x01"
+GetVariable
+Push 414
+Equals
+Not
+If loc1511
+Push "\x01", "\x01"
+GetVariable
+Push 155
+Subtract
+SetVariable
+GetVariable
+Jump loc1391
+loc1511:Push "\x01"
+GetVariable
+Push 100
+Equals
+Not
+If loc1566
+Push "\x01", "\x01"
+GetVariable
+Push 20
+Subtract
+SetVariable
+ConstantPool "{invalid_utf8=139}܃BK", "{invalid_utf8=156}{invalid_utf8=247}Ya", "{invalid_utf8=168}\x1f{invalid_utf8=236}{invalid_utf8=203}", "{invalid_utf8=140}{invalid_utf8=183}{invalid_utf8=163}{invalid_utf8=160}`", "{invalid_utf8=194}{invalid_utf8=250}\r{invalid_utf8=141}", "\x18{invalid_utf8=221}"
+Jump loc1391
+loc1566:Push "\x01"
+GetVariable
+Push 671
+Equals
+Not
+If loc159e
+Push "\x01", "\x01"
+GetVariable
+Push 257
+Subtract
+SetVariable
+Push "\x0f"
+Jump loc1391
+loc159e:Push "\x01"
+GetVariable
+Push 514
+Equals
+Not
+If loc15d0
+Push "\x01", "\x01"
+GetVariable
+Push 113
+Add
+SetVariable
+Jump loc000a
+loc15d0:Push "\x01"
+GetVariable
+Push 238
+Equals
+Not
+If loc1623
+Push "\x01", "\x01"
+GetVariable
+Push 378
+Add
+SetVariable
+If loc1607
+Jump loc161e
+loc1607:Push "\x01", "\x01"
+GetVariable
+Push 124
+Subtract
+SetVariable
+loc161e:Jump loc1391
+loc1623:Push "\x01"
+GetVariable
+Push 539
+Equals
+Not
+If loc165a
+Push "\x01", "\x01"
+GetVariable
+Push 311
+Add
+SetVariable
+Push true
+Jump loc1391
+loc165a:Push "\x01"
+GetVariable
+Push 878
+Equals
+Not
+If loc16ad
+Push "\x01", "\x01"
+GetVariable
+Push 296
+Subtract
+SetVariable
+If loc1691
+Jump loc16a8
+loc1691:Push "\x01", "\x01"
+GetVariable
+Push 493
+Subtract
+SetVariable
+loc16a8:Jump loc1391
+loc16ad:Push "\x01"
+GetVariable
+Push 627
+Equals
+Not
+If loc16df
+Push "\x01", "\x01"
+GetVariable
+Push 88
+Subtract
+SetVariable
+Jump loc1391
+loc16df:Push "\x01"
+GetVariable
+Push 80
+Equals
+Not
+If loc1716
+Push "\x01", "\x01"
+GetVariable
+Push 798
+Add
+SetVariable
+Push true
+Jump loc1391
+loc1716:Push "\x01"
+GetVariable
+Push 490
+Equals
+Not
+If loc1749
+Push "\x01", "\x01"
+GetVariable
+Push 181
+Add
+SetVariable
+DefineLocal
+Jump loc1391
+loc1749:Push "\x01"
+GetVariable
+Push 89
+Equals
+Not
+If loc177b
+Push "\x01", "\x01"
+GetVariable
+Push 792
+Add
+SetVariable
+Jump loc1391
+loc177b:Push "\x01"
+GetVariable
+Push 881
+Equals
+Not
+If loc17b2
+Push "\x01", "\x01"
+GetVariable
+Push 139
+Subtract
+SetVariable
+Push true
+Jump loc1391
+loc17b2:Push "\x01"
+GetVariable
+Push 874
+Equals
+Not
+If loc17ef
+Push "\x01", "\x01"
+GetVariable
+Push 7
+Add
+SetVariable
+ConstantPool "{invalid_utf8=232}$", "ت"
+Jump loc1391
+loc17ef:Push "\x01"
+GetVariable
+Push 613
+Equals
+Not
+If loc1821
+Push "\x01", "\x01"
+GetVariable
+Push 86
+Subtract
+SetVariable
+Jump loc0bd5
+loc1821:Push "\x01"
+GetVariable
+Push 742
+Equals
+Not
+If loc1874
+Push "\x01", "\x01"
+GetVariable
+Push 228
+Subtract
+SetVariable
+If loc1858
+Jump loc186f
+loc1858:Push "\x01", "\x01"
+GetVariable
+Push 113
+Add
+SetVariable
+loc186f:Jump loc1391
+loc1874:Push "\x01"
+GetVariable
+Push 850
+Equals
+Not
+If loc18c7
+Push "\x01", "\x01"
+GetVariable
+Push 237
+Subtract
+SetVariable
+If loc18ab
+Jump loc18c2
+loc18ab:Push "\x01", "\x01"
+GetVariable
+Push 86
+Subtract
+SetVariable
+loc18c2:Jump loc1391
+loc18c7:Push "\x01"
+GetVariable
+Push 527
+Equals
+Not
+If loc18f9
+Push "\x01", "\x01"
+GetVariable
+Push 426
+Add
+SetVariable
+Jump loc1391
+loc18f9:Push "\x01"
+GetVariable
+Push 41
+Equals
+Not
+If loc1938
+Push "\x01", "\x01"
+GetVariable
+Push 912
+Add
+SetVariable
+ConstantPool "{invalid_utf8=239}ZN{invalid_utf8=201}", "*{invalid_utf8=251}"
+Jump loc1391
+loc1938:Push "\x01"
+GetVariable
+Push 953
+Equals
+Not
+If loc1975
+Push "\x01", "\x01"
+GetVariable
+Push 463
+Subtract
+SetVariable
+Push "\x0f", 1
+Jump loc1391
+loc1975:Push "\x01"
+GetVariable
+Push 208
+Equals
+Not
+If loc19c8
+Push "\x01", "\x01"
+GetVariable
+Push 135
+Subtract
+SetVariable
+If loc19ac
+Jump loc19c3
+loc19ac:Push "\x01", "\x01"
+GetVariable
+Push 689
+Add
+SetVariable
+loc19c3:Jump loc1391
+loc19c8:Push "\x01"
+GetVariable
+Push 73
+Equals
+Not
+If loc1ba5
+Push "\x01", "\x01"
+GetVariable
+Push 689
+Add
+SetVariable
+ConstantPool "_global", "mx", "Object", "core", "ext", "UIComponentExtensions", "prototype", "Extensions", "bExtended", "TextField", "setFocus", "Selection", "onSetFocus", "tabEnabled", "getFocusManager", "bDrawFocus", "drawFocus", "onKillFocus", "UIComponent", "managers", "OverlappedWindows", "enableOverlappedWindows", "styles", "CSSSetStyle", "enableRunTimeCSS", "FocusManager", "enableFocusManagement", "UIComponentExtended", "UIComponentDependency", "FocusManagerDependency", "OverlappedWindowsDependency", "ASSetPropFlags"
+Jump loc1391
+loc1ba5:Push "\x01"
+GetVariable
+Push 762
+Equals
+Not
+If loc1bdc
+Push "\x01", "\x01"
+GetVariable
+Push 591
+Subtract
+SetVariable
+Jump loc132b
+loc1bd7:Jump loc1c13
+loc1bdc:Push "\x01"
+GetVariable
+Push 171
+Equals
+Not
+If loc1c0e
+Push "\x01", "\x01"
+GetVariable
+Push 171
+Subtract
+SetVariable
+Jump loc1c13
+loc1c0e:Jump loc139c
+loc1c13:

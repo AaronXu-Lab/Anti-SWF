@@ -1,0 +1,323 @@
+on(construct){
+   Jump loc01d3
+   loc0005:If loc0059
+   Push constant3
+   GetVariable
+   Push constant4, true
+   SetMember
+   Push constant5
+   GetVariable
+   Push constant4, false
+   SetMember
+   Push constant6
+   GetVariable
+   Push constant4, false
+   SetMember
+   Push 1000, constant7, constant8, 3, register1, constant9
+   CallMethod
+   StoreRegister 2
+   Pop
+   Push register2, constant10, constant11
+   SetMember
+   loc0059:Push constant12
+   GetVariable
+   Push constant13, 480, 640, 0, 0, 4, constant14
+   GetVariable
+   Push constant15
+   GetMember
+   Push constant16
+   NewMethod
+   SetMember
+   Push constant17
+   GetVariable
+   Push constant18, false
+   SetMember
+   Push constant19
+   GetVariable
+   Push constant20, true
+   SetMember
+   Push constant17
+   GetVariable
+   Push constant21, constant22
+   SetMember
+   Push constant23, 19, constant24
+   SetProperty
+   Stop
+   Push constant25, false
+   SetVariable
+   Push constant26, false
+   SetVariable
+   Push constant3
+   GetVariable
+   Push constant4, false
+   SetMember
+   Push constant27, constant12
+   GetVariable
+   Push 1, constant28
+   NewObject
+   DefineLocal
+   Push constant3
+   GetVariable
+   Push constant4
+   GetMember
+   Not
+   Not
+   If loc0131
+   Push 9999, constant29, 2, constant12
+   GetVariable
+   Push constant27
+   GetMember
+   Push constant30
+   CallMethod
+   Pop
+   loc0131:Push constant3
+   GetVariable
+   Push constant4, false
+   SetMember
+   Push constant0
+   DefineLocal2
+   Push constant31
+   DefineLocal2
+   Push constant0, 10000, constant32, constant12
+   GetVariable
+   Push 3, constant33
+   CallFunction
+   SetVariable
+   Jump loc016b
+   loc016b:Jump loc0170
+   loc0170:Jump loc0610
+   loc0175:Push "domains", 0
+   InitObject
+   SetVariable
+   Push "domains"
+   GetVariable
+   Push "kr_hangame", "http://images.hangame.co.kr"
+   SetMember
+   Push "domains"
+   GetVariable
+   Push "kr_naver", "http://itemimgs.naver.com"
+   SetMember
+   Push "domains"
+   GetVariable
+   Push "kr_alpha", "http://alpha.hangame.com"
+   SetMember
+   Push "toURL", "http://flash.hangame.com"
+   SetVariable
+   Push "enabled", false
+   SetVariable
+   Jump loc01c9
+   loc01c4:Jump loc0175
+   loc01c9:Jump loc0365
+   loc01ce:Jump loc01c4
+   loc01d3:DefineFunction "\x04\x05", 0 {
+   Push "\x03", 408, 511
+   Modulo
+   Push true
+   Multiply
+   SetVariable
+   Push "\x03", "\x01"
+   If loc0211
+   Jump loc0211
+   loc0211:GetVariable
+   Return
+   }
+   Push "\x01", -69, 0, "\x04\x05"
+   CallFunction
+   Add2
+   DefineLocal
+   loc0234:Push "\x01"
+   Jump loc0245
+   loc023f:Unknown_03
+   Jump loc0610
+   loc0245:GetVariable
+   Push 339
+   Equals
+   Not
+   If loc0276
+   Push "\x01", "\x01"
+   GetVariable
+   Push 357
+   Add
+   SetVariable
+   Push true
+   Jump loc0234
+   loc0276:Push "\x01"
+   GetVariable
+   Push 796
+   Equals
+   Not
+   If loc02ae
+   Push "\x01", "\x01"
+   GetVariable
+   Push 7
+   Subtract
+   SetVariable
+   Push "\x0f"
+   Jump loc0234
+   loc02ae:Push "\x01"
+   GetVariable
+   Push 696
+   Equals
+   Not
+   If loc0301
+   Push "\x01", "\x01"
+   GetVariable
+   Push 196
+   Add
+   SetVariable
+   If loc02e5
+   Jump loc02fc
+   loc02e5:Push "\x01", "\x01"
+   GetVariable
+   Push 53
+   Add
+   SetVariable
+   loc02fc:Jump loc0234
+   loc0301:Push "\x01"
+   GetVariable
+   Push 892
+   Equals
+   Not
+   If loc0333
+   Push "\x01", "\x01"
+   GetVariable
+   Push 53
+   Add
+   SetVariable
+   Jump loc0005
+   loc0333:Push "\x01"
+   GetVariable
+   Push 526
+   Equals
+   Not
+   If loc036a
+   Push "\x01", "\x01"
+   GetVariable
+   Push 51
+   Subtract
+   SetVariable
+   Jump loc01ce
+   loc0365:Jump loc0610
+   loc036a:Push "\x01"
+   GetVariable
+   Push 233
+   Equals
+   Not
+   If loc039d
+   Push "\x01", "\x01"
+   GetVariable
+   Push 563
+   Add
+   SetVariable
+   DefineLocal
+   Jump loc0234
+   loc039d:Push "\x01"
+   GetVariable
+   Push 538
+   Equals
+   Not
+   If loc046f
+   Push "\x01", "\x01"
+   GetVariable
+   Push 12
+   Subtract
+   SetVariable
+   ConstantPool "domains", "kr_hangame", "http://images.hangame.co.kr", "kr_naver", "http://itemimgs.naver.com", "kr_alpha", "http://alpha.hangame.com", "toURL", "http://flash.hangame.com", "enabled"
+   Jump loc0234
+   loc046f:Push "\x01"
+   GetVariable
+   Push 0
+   Equals
+   Not
+   If loc04c2
+   Push "\x01", "\x01"
+   GetVariable
+   Push 538
+   Add
+   SetVariable
+   If loc04a6
+   Jump loc04bd
+   loc04a6:Push "\x01", "\x01"
+   GetVariable
+   Push 12
+   Subtract
+   SetVariable
+   loc04bd:Jump loc0234
+   loc04c2:Push "\x01"
+   GetVariable
+   Push 789
+   Equals
+   Not
+   If loc04f5
+   Push "\x01", "\x01"
+   GetVariable
+   Push 623
+   Subtract
+   SetVariable
+   GetVariable
+   Jump loc0234
+   loc04f5:Push "\x01"
+   GetVariable
+   Push 945
+   Equals
+   Not
+   If loc0527
+   Push "\x01", "\x01"
+   GetVariable
+   Push 348
+   Subtract
+   SetVariable
+   Jump loc0234
+   loc0527:Push "\x01"
+   GetVariable
+   Push 166
+   Equals
+   Not
+   If loc055a
+   Push "\x01", "\x01"
+   GetVariable
+   Push 166
+   Subtract
+   SetVariable
+   Not
+   Jump loc0234
+   loc055a:Push "\x01"
+   GetVariable
+   Push 933
+   Equals
+   Not
+   If loc059c
+   Push "\x01", "\x01"
+   GetVariable
+   Push 336
+   Subtract
+   SetVariable
+   ConstantPool "޼", "{invalid_utf8=168}{invalid_utf8=180}+{invalid_utf8=161}", "{invalid_utf8=210}{invalid_utf8=192}"
+   Jump loc0234
+   loc059c:Push "\x01"
+   GetVariable
+   Push 597
+   Equals
+   Not
+   If loc05d9
+   Push "\x01", "\x01"
+   GetVariable
+   Push 364
+   Subtract
+   SetVariable
+   Push "\x0f", 1
+   Jump loc0234
+   loc05d9:Push "\x01"
+   GetVariable
+   Push 475
+   Equals
+   Not
+   If loc060b
+   Push "\x01", "\x01"
+   GetVariable
+   Push 475
+   Subtract
+   SetVariable
+   Jump loc0610
+   loc060b:Jump loc023f
+   loc0610:}
