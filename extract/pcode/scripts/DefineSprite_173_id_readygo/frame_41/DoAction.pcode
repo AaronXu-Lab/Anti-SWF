@@ -1,5 +1,0 @@
-Push 0, "this"
-GetVariable
-Push "removeMovieClip"
-CallMethod
-Pop

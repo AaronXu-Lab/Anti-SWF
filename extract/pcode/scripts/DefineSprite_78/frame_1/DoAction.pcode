@@ -1,4 +1,0 @@
-Push "hit_box"
-GetVariable
-Push "_visible", false
-SetMember

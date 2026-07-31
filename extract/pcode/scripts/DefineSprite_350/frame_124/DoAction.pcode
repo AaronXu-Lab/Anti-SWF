@@ -1,9 +1,0 @@
-Push "this"
-GetVariable
-Push "onEnterFrame"
-Delete
-Pop
-Push "mouse_mc"
-GetVariable
-Push "_visible", false
-SetMember

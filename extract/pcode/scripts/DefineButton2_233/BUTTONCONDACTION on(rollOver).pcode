@@ -1,9 +1,0 @@
-on(rollOver){
-   Push "snd_ropecatch", 1, "this"
-   GetVariable
-   Push "sound"
-   GetMember
-   Push "play"
-   CallMethod
-   Pop
-}

@@ -1,9 +1,0 @@
-Redirecting Component
---- RECORDSEPARATOR ---
-This component checks the domain SWF file stored.
---- RECORDSEPARATOR ---
-If the domain is not reserved, this will unloads the movie and redirects the page 
---- RECORDSEPARATOR ---
-to [toURL]
---- RECORDSEPARATOR ---
-usage: put this component in the Copyright symbol on the movie's first frame.

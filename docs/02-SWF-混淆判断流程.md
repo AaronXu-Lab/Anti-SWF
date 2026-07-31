@@ -3,7 +3,7 @@
 > 拿到一个 SWF,**5 分钟内决定**:能不能反编译重写(见 [01](01-反编译重写-尝试记录.md)),
 > 还是直接上 Ruffle 壳。
 >
-> 前置:`brew install openjdk` + `tools/ffdec/`(JPEXS)。每次开终端先
+> 前置:`brew install openjdk` + `tools/vendor/ffdec/`(JPEXS)。每次开终端先
 > `export PATH=/opt/homebrew/opt/openjdk/bin:$PATH`。
 
 ---
@@ -11,15 +11,15 @@
 ## 30 秒速判(三条命令)
 
 ```bash
-python3 tools/swfhead.py <文件>.swf
+python3 tools/scripts/swfhead.py <文件>.swf
 ```
 
 ```bash
-java -jar tools/ffdec/ffdec.jar -export script ./extract/probe ./<文件>.swf
+java -jar tools/vendor/ffdec/ffdec.jar -export script ./temp/flying-ninja-cat/work/extract/probe ./<文件>.swf
 ```
 
 ```bash
-grep -rlc '§§push\|§§pop\|§§constant\|invalid_utf8' ./extract/probe/scripts | head
+grep -rlc '§§push\|§§pop\|§§constant\|invalid_utf8' ./temp/flying-ninja-cat/work/extract/probe/scripts | head
 ```
 
 **第三条命令有输出 = 已混淆,不等于无法还原。** 先按下文的“保守反混淆”
@@ -35,7 +35,7 @@ JPEXS 用 `§§` 前缀表示「这段字节码无法还原成合法 AS 语句�
 正常编译器产物**不会**留下这些,出现即人为混淆。
 
 ```bash
-grep -rc '§§' ./extract/probe/scripts/__Packages/*.as | sort -t: -k2 -rn | head
+grep -rc '§§' ./temp/flying-ninja-cat/work/extract/probe/scripts/__Packages/*.as | sort -t: -k2 -rn | head
 ```
 
 ### 2. `while(true)` + 数字状态机 —— 控制流打散
@@ -55,7 +55,7 @@ while(true)
 判据:一个函数里 `eval("\x01") ==` 这种比较出现 **10 次以上**。
 
 ```bash
-grep -c 'eval("\\x01") ==' ./extract/probe/scripts/__Packages/SetGame.as
+grep -c 'eval("\\x01") ==' ./temp/flying-ninja-cat/work/extract/probe/scripts/__Packages/SetGame.as
 ```
 
 JPEXS 的 AS1/2 执行式反混淆可以处理一部分控制流打散,但默认执行上限偏低。
@@ -72,7 +72,7 @@ _root["{invalid_utf8=206}{invalid_utf8=198}"]["{invalid_utf8=169}`d{invalid_utf8
 即使还原了控制流,也不知道每个字段的含义。
 
 ```bash
-grep -rc 'invalid_utf8' ./extract/probe/scripts/__Packages/*.as | sort -t: -k2 -rn | head
+grep -rc 'invalid_utf8' ./temp/flying-ninja-cat/work/extract/probe/scripts/__Packages/*.as | sort -t: -k2 -rn | head
 ```
 
 ### 4. 常量池投毒 —— 最阴的一层,容易误判
@@ -83,11 +83,11 @@ grep -rc 'invalid_utf8' ./extract/probe/scripts/__Packages/*.as | sort -t: -k2 -
 看 P-code 才能发现:
 
 ```bash
-java -jar tools/ffdec/ffdec.jar -format script:pcode -export script ./extract/pcode ./<文件>.swf
+java -jar tools/vendor/ffdec/ffdec.jar -format script:pcode -export script ./temp/flying-ninja-cat/work/extract/pcode ./<文件>.swf
 ```
 
 ```bash
-grep -c 'ConstantPool' ./extract/pcode/scripts/<某脚本>/DoAction.pcode
+grep -c 'ConstantPool' ./temp/flying-ninja-cat/work/extract/pcode/scripts/<某脚本>/DoAction.pcode
 ```
 
 **一个 action block 里 >1 个 `ConstantPool` 就是投毒。**
@@ -119,7 +119,7 @@ if(_root._url.indexOf(dm[i]) == 0) { ok = true; }
 ### 5. 非法 tag code —— 防解析器的垃圾
 
 ```bash
-python3 tools/swftags.py list <文件>.swf
+python3 tools/scripts/swftags.py list <文件>.swf
 ```
 
 本作输出里有 `253 × 47` 和 `255 × 1`。SWF 规范里没有这些 tag code,
@@ -149,7 +149,7 @@ python3 tools/swftags.py list <文件>.swf
 仓库里已经封装成脚本:
 
 ```bash
-tools/decompile-as2.sh Flying-Ninja-Cat.swf extract/deob-safe
+tools/scripts/decompile-as2.sh swfs/flying-ninja-cat/Flying-Ninja-Cat.swf temp/flying-ninja-cat/work/extract/deob-safe
 ```
 
 脚本使用:
@@ -166,10 +166,10 @@ parallelSpeedUp=false
 导出后做四项检查:
 
 ```bash
-find extract/deob-safe/scripts -name '*.as' | wc -l
-grep -Rlc '§§push\|§§pop\|while(true)' extract/deob-safe/scripts
-grep -c '^   function ' extract/deob-safe/scripts/__Packages/SetGame.as
-wc -l extract/deob-safe/scripts/__Packages/{SetGame,MapData,ItemData}.as
+find temp/flying-ninja-cat/work/extract/deob-safe/scripts -name '*.as' | wc -l
+grep -Rlc '§§push\|§§pop\|while(true)' temp/flying-ninja-cat/work/extract/deob-safe/scripts
+grep -c '^   function ' temp/flying-ninja-cat/work/extract/deob-safe/scripts/__Packages/SetGame.as
+wc -l temp/flying-ninja-cat/work/extract/deob-safe/scripts/__Packages/{SetGame,MapData,ItemData}.as
 ```
 
 本作得到 152 份脚本、`SetGame` 48 个方法。激进开启自动重命名和
@@ -187,7 +187,7 @@ wc -l extract/deob-safe/scripts/__Packages/{SetGame,MapData,ItemData}.as
 - 常见的只是名字混淆(`class A1 { var _a:int }`),逻辑结构通常还在,重写可行性高很多
 
 ```bash
-java -jar tools/ffdec/ffdec.jar -deobfuscate <文件>.swf ./extract/deob.swf
+java -jar tools/vendor/ffdec/ffdec.jar -deobfuscate <文件>.swf ./temp/flying-ninja-cat/work/extract/deob.swf
 ```
 
 ---
@@ -206,13 +206,13 @@ for s in sorted(set(re.findall(rb'[ -~]{4,}',body))):
 "
 ```
 
-本作靠这条发现了 `FSAGOGUN_RES.swf`——第一次部署漏了它,Ruffle 报 404、整页黑屏。
+本作靠这条发现了 `swfs/flying-ninja-cat/FSAGOGUN_RES.swf`——第一次部署漏了它,Ruffle 报 404、整页黑屏。
 
 **2. 掐掉联网。** 上面同一条命令会把上报地址一起列出来。两道防线:
 
 - 播放器层:`allowNetworking:'none'` + `openUrlMode:'deny'`(绝对保证,推荐)
 - SWF 层:**等长**常量替换,把 `sendAndLoad` 改成 `sendAndLoaX`
-  (AS2 调用不存在的方法是静默 no-op)。见 `tools/strip-score-upload.py`
+  (AS2 调用不存在的方法是静默 no-op)。见 `tools/scripts/strip-score-upload.py`
 
 > **等长是硬约束。** SWF 里的字符串是 null 结尾、顺序排列的,
 > 改短会多出一个池条目、后续索引全部错位;改长会撑破 action block 的长度字段。

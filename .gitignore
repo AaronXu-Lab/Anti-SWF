@@ -1,13 +1,13 @@
+# Disposable reverse-engineering and validation artifacts
+temp/
+
 # Local browser verification artifacts
 .playwright-cli/
 output/
 
-# Experimental decompiler comparisons; deob-safe is the retained result.
-extract/deob-auto/
-extract/deob-keep-names/
-extract/deob-no-constants/
-extract/ninja-cat-res/
-
 # Local Python bytecode
 __pycache__/
 *.pyc
+
+# Finder metadata
+.DS_Store

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="《飞天忍者猫》SWF 游戏的纯 HTML5 Canvas 重制版"
+    />
+    <title>飞天忍者猫 · HTML5 重制版</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <canvas
+        id="game"
+        width="640"
+        height="480"
+        tabindex="0"
+        role="application"
+        aria-label="飞天忍者猫。点击或按空格跳跃，再次点击发射绳索。"
+      ></canvas>
+      <p id="status" class="sr-only" aria-live="polite">正在载入游戏素材</p>
+    </main>
+    <script type="module" src="./game.js?v=20260731-5"></script>
+  </body>
+</html>

@@ -1,55 +1,65 @@
 # Anti-SWF
 
-把老 Flash 游戏搬进浏览器的工作区。
+把老 Flash 游戏反编译、验证并重写成可独立运行的 HTML5 游戏。
 
-## 先读哪份
+## 目录
 
-| 想干什么 | 看这里 |
+| 目录 | 用途 |
 | --- | --- |
-| 刚拿到一个 SWF,不知道能不能反编译 | [docs/02-SWF-混淆判断流程.md](docs/02-SWF-混淆判断流程.md) —— 5 分钟出结论 |
-| AS1/2 有混淆,想先抢救源码 | `tools/decompile-as2.sh` + [docs/01-反编译重写-尝试记录.md](docs/01-反编译重写-尝试记录.md) |
-| 要重写成纯 H5 | [h5/](h5/) —— 本作的可玩 Canvas 重制版 |
-| 确实无法还原,要上 Ruffle 壳 | 02 号文档末尾「决定上 Ruffle 之后」 |
+| [`.agents/skills/`](.agents/skills/) | 项目级 AI 工作流技能 |
+| [`docs/`](docs/) | 通用流程、研究记录和迁移文档 |
+| [`tools/scripts/`](tools/scripts/) | 仓库维护的反编译、分析和补丁脚本 |
+| [`tools/vendor/`](tools/vendor/) | FFDec、Ruffle 等第三方工具 |
+| [`swfs/`](swfs/) | 按游戏保存不可替代的原始 SWF 输入和清单 |
+| [`h5/`](h5/) | 按游戏保存可独立运行的最终 HTML5 内容 |
+| `temp/` | 可重新生成的反编译输出与临时验证产物；不纳入版本管理 |
 
-## 环境
+`temp/` 可以整体删除。最终 H5 不得读取其中任何文件。
 
-不需要管理员密码:
+转换新游戏时使用项目技能
+[`$convert-swf-to-h5`](.agents/skills/convert-swf-to-h5/SKILL.md)，它覆盖从
+SWF 评估、反编译和素材清洗到 H5 重写与最终验收的完整流程。
 
-```bash
-brew install openjdk
-```
+## 飞天忍者猫
 
-每次开终端:
+- 原始文件与哈希清单：[`swfs/flying-ninja-cat/`](swfs/flying-ninja-cat/)
+- HTML5 重制版：[`h5/flying-ninja-cat/`](h5/flying-ninja-cat/)
+- 研究记录：[`docs/01-反编译重写-尝试记录.md`](docs/01-反编译重写-尝试记录.md)
 
-```bash
-export PATH=/opt/homebrew/opt/openjdk/bin:$PATH
-```
-
-## tools/
-
-| 工具 | 用途 |
-| --- | --- |
-| `ffdec/` | JPEXS 21.1.0,反编译 / 导素材。`java -jar tools/ffdec/ffdec.jar --help` |
-| `ruffle-selfhosted/` | Ruffle 0.4.1 自托管构建(js + 两份 wasm) |
-| `swfhead.py` | 读文件头:舞台尺寸、帧率、帧数、AS2/AS3、压缩方式 |
-| `swftags.py` | tag 层 `list` / `strip`,用于看结构、剥离 DoAction 做对照实验 |
-| `swfmanifest.py` | 列出 ExportAssets、MovieClip 帧数和帧标签,用于把类名映射回素材 |
-| `decompile-as2.sh` | 用本作验证过的保守参数反编译带混淆的 AS1/2 |
-| `strip-score-upload.py` | 等长常量替换,摘掉 SWF 里的成绩联网上报 |
-
-## 已完成
-
-**飞天忍者猫** —— 五项混淆信号全中,但并非不能还原。JPEXS 的 AS1/2
-执行式反混淆在提高执行上限、关闭激进重命名和无效赋值删除后,成功恢复了
-152 份脚本。`SetGame.as` 的 48 个方法、地图、道具表、计分和绳索状态机均可读。
-
-纯 H5 重制版位于 [h5/](h5/),不含 SWF、Ruffle 或外部联网:
+运行：
 
 ```bash
 python3 -m http.server 4173
 ```
 
-打开 `http://127.0.0.1:4173/h5/`。支持鼠标、触摸和空格键,最高分保存在
-浏览器本地。打包后的原版素材约 2.6 MB。
+打开：
 
-Ruffle 版仍保留作逐帧行为参照;它不再是唯一方案。
+```text
+http://127.0.0.1:4173/h5/flying-ninja-cat/
+```
+
+验证：
+
+```bash
+node h5/flying-ninja-cat/tests/rope.test.cjs
+node --check h5/flying-ninja-cat/game.js
+git diff --check
+```
+
+## 反编译
+
+安装 Java：
+
+```bash
+brew install openjdk
+```
+
+使用保守参数导出 AS1/2：
+
+```bash
+tools/scripts/decompile-as2.sh \
+  swfs/flying-ninja-cat/Flying-Ninja-Cat.swf \
+  temp/flying-ninja-cat/work/extract/deob-safe
+```
+
+详细判断流程见 [`docs/02-SWF-混淆判断流程.md`](docs/02-SWF-混淆判断流程.md)。

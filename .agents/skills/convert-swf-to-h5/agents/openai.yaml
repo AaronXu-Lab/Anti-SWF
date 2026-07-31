@@ -1,0 +1,4 @@
+interface:
+  display_name: "Convert SWF to H5"
+  short_description: "Convert SWF games into verified standalone HTML5 builds"
+  default_prompt: "Use $convert-swf-to-h5 to analyze this SWF game and produce a verified standalone HTML5 conversion."

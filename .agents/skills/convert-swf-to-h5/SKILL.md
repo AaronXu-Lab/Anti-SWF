@@ -1,0 +1,101 @@
+---
+name: convert-swf-to-h5
+description: End-to-end workflow for reverse-engineering legacy SWF games and producing verified, standalone HTML5 reimplementations. Use when onboarding a new .swf game, deciding between native H5 and Ruffle, exporting or cleaning Flash assets, recovering AS1/AS2 or AS3 logic, translating timelines and coordinates to Canvas/WebGL, diagnosing black screens or fidelity bugs, validating a conversion, or organizing per-game source, H5, and temporary work directories.
+---
+
+# Convert SWF to H5
+
+Produce a maintainable H5 game while preserving the original SWF and enough evidence to
+verify behavior. Treat conversion as reverse engineering plus differential validation, not
+as a blind asset export.
+
+## Required repository layout
+
+Use a stable lowercase kebab-case `GAME_ID`:
+
+```text
+swfs/<game>/                 immutable inputs and manifest.json
+h5/<game>/                   standalone final runtime and permanent tests
+temp/<game>/work/            disposable FFDec output and experiments
+temp/<game>/validation/      disposable screenshots and reports
+docs/                        durable findings
+tools/scripts/               repository-owned tooling
+tools/vendor/                FFDec, Ruffle, and other third-party tools
+```
+
+Never mutate an original SWF. Never make the final H5 runtime depend on `temp/`, `swfs/`,
+Ruffle, or reverse-engineering tools.
+
+## Read the references in phase order
+
+1. Before starting or choosing an implementation strategy, read
+   [references/pipeline.md](references/pipeline.md) completely.
+2. Before changing exported assets, coordinate math, collision, networking, or a black
+   screen, read [references/pitfalls.md](references/pitfalls.md) completely.
+3. Before claiming the conversion complete, read and execute
+   [references/verification.md](references/verification.md) completely.
+
+## Operating rules
+
+### Establish a baseline first
+
+- Record SHA-256 hashes, SWF version, ActionScript generation, stage size, frame rate, and
+  frame count before modifying anything.
+- Run the original in an isolated Ruffle page when possible. Capture title, gameplay,
+  jump, special mechanics, death, restart, and audio behavior.
+- Inspect console and network requests. Locate runtime-loaded SWFs and remote score or
+  tracking endpoints before selecting an architecture.
+
+### Decide instead of assuming
+
+- Prefer a native Canvas/WebGL rewrite when logic and data can be recovered and the goal
+  is a maintainable, standalone game.
+- Use a Ruffle shell when byte-level fidelity or delivery time dominates and maintenance
+  of the original behavior is acceptable.
+- Do not interpret heavy obfuscation as proof that native H5 is impossible. Run the
+  conservative deobfuscation workflow and compare structural completeness first.
+
+### Build from data and state
+
+- Extract data tables before rendering code: maps, item layouts, scores, difficulty,
+  speeds, gravity, frame labels, and exported symbol names.
+- Write an explicit state machine for gameplay states. Keep simulation independent from
+  DOM and rendering so tests can drive it deterministically.
+- Use the SWF frame rate as a fixed simulation step. Render with `requestAnimationFrame`,
+  but do not make physics depend directly on variable display intervals.
+- Convert twips to pixels explicitly: `20 twips = 1 px`.
+
+### Treat registration points as source data
+
+- Do not center every PNG by width and height. FFDec PNG bounds describe the exported
+  canvas, not necessarily the MovieClip registration point.
+- Derive draw offsets from SWF matrices, shape bounds, named marker clips, or a validated
+  old/new pixel comparison.
+- Derive collision from the original hidden markers (`ground_pos`, `rope_pos`, hit shapes)
+  rather than visible bitmap dimensions.
+- Add positive-hit and nearby-miss regression tests whenever collision changes.
+
+### Keep the runtime self-contained
+
+- Copy only cleaned, required images and audio into `h5/<game>/assets/`.
+- Use relative runtime paths rooted in the game directory.
+- Remove or replace remote submissions and tracking unless explicitly required.
+- Respect browser autoplay restrictions and degrade safely when audio playback is denied.
+- Version changed scripts and exported assets during browser validation; verify the loaded
+  build identifier rather than trusting a reload.
+
+## Completion contract
+
+Do not report success until all of the following are true:
+
+- The original SWF hashes still match the manifest.
+- H5 tests and syntax checks pass.
+- Browser network requests contain no 404s or unintended remote calls.
+- Key states match the original visually and behaviorally.
+- A fresh-cache browser loads the intended build.
+- The game still runs when `temp/<game>/` is unavailable.
+- The game README documents controls, known intentional differences, and verification
+  commands.
+
+Preserve small permanent regression tests under `h5/<game>/tests/`. Keep one-off screenshots
+and decompiler output under `temp/` so they can be deleted after delivery.

@@ -1,7 +1,0 @@
-on(keyPress "<Tab>"){
-   Push 0, "this"
-   GetVariable
-   Push "tabHandler"
-   CallMethod
-   Pop
-}

@@ -1,0 +1,22 @@
+{
+  "id": "flying-ninja-cat",
+  "title": "飞天忍者猫",
+  "runtime": "ActionScript 2",
+  "files": [
+    {
+      "path": "Flying-Ninja-Cat.swf",
+      "role": "main",
+      "sha256": "928d0195fcc107cb6c845ef6fef7472fff4a878611844450956a5b55a783e04e"
+    },
+    {
+      "path": "FSAGOGUN_RES.swf",
+      "role": "runtime-resource",
+      "sha256": "b2ef09ad088d47fde2e08e7a1f5dc06adf393ed0d861f9735ce53b52a693885a"
+    }
+  ],
+  "tools": {
+    "ffdec": "21.1.0",
+    "ruffle": "0.4.1"
+  },
+  "h5Entry": "../../h5/flying-ninja-cat/index.html"
+}
