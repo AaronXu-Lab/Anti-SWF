@@ -22,7 +22,8 @@ java -jar tools/ffdec/ffdec.jar -export script ./extract/probe ./<文件>.swf
 grep -rlc '§§push\|§§pop\|§§constant\|invalid_utf8' ./extract/probe/scripts | head
 ```
 
-**第三条命令有输出 = 已混淆。** 没输出就去看 `__Packages/`,能读懂就走重写。
+**第三条命令有输出 = 已混淆,不等于无法还原。** 先按下文的“保守反混淆”
+再比较结果。没输出就去看 `__Packages/`,能读懂可直接走重写。
 
 ---
 
@@ -57,8 +58,9 @@ while(true)
 grep -c 'eval("\\x01") ==' ./extract/probe/scripts/__Packages/SetGame.as
 ```
 
-**AS2 的控制流打散目前没有可用的自动还原工具**(JPEXS 的 `-deobfuscate` 只针对 AS3 P-code)。
-见到这个基本可以放弃重写。
+JPEXS 的 AS1/2 执行式反混淆可以处理一部分控制流打散,但默认执行上限偏低。
+本作把上限提高到 1000 万后成功恢复。见到这个信号应先跑一次保守配置,
+不能直接据此放弃重写。
 
 ### 3. 不可打印的标识符 —— 名字被替换
 
@@ -133,11 +135,46 @@ python3 tools/swftags.py list <文件>.swf
 | --- | --- | --- |
 | 无 | 未混淆 | **走重写**,见 01 号文档 |
 | 只有 5 | 基本干净 | 走重写,注意解析器要能跳过未知 tag |
-| 1 或 3 | 轻度(只换名字) | 可尝试重写,靠行为反推字段名,慢但可行 |
-| 2(控制流打散) | 重度 | **放弃重写,上 Ruffle** |
-| 2 + 3 + 4 | 商业级加壳 | 上 Ruffle,别犹豫 |
+| 1 或 3 | 轻度(只换名字) | 可尝试重写,靠行为反推字段名 |
+| 2(控制流打散) | 重度 | 先跑保守执行式反混淆,再比较关键类 |
+| 2 + 3 + 4 | 商业级加壳 | 保守反混淆失败后再转 Ruffle |
 
-本作命中 1/2/3/4/5 全部 → Ruffle。
+本作命中 1/2/3/4/5 全部,但保守配置仍恢复成功。可见“混淆程度”只能说明
+默认导出不可读,不能单独证明游戏不能逆向。
+
+---
+
+## AS1/2 保守反混淆
+
+仓库里已经封装成脚本:
+
+```bash
+tools/decompile-as2.sh Flying-Ninja-Cat.swf extract/deob-safe
+```
+
+脚本使用:
+
+```text
+autoDeobfuscate=true
+as12DeobfuscatorExecutionLimit=10000000
+autoRenameIdentifiers=false
+deobfuscateAs12RemoveInvalidNamesAssignments=false
+resolveConstants=true
+parallelSpeedUp=false
+```
+
+导出后做四项检查:
+
+```bash
+find extract/deob-safe/scripts -name '*.as' | wc -l
+grep -Rlc '§§push\|§§pop\|while(true)' extract/deob-safe/scripts
+grep -c '^   function ' extract/deob-safe/scripts/__Packages/SetGame.as
+wc -l extract/deob-safe/scripts/__Packages/{SetGame,MapData,ItemData}.as
+```
+
+本作得到 152 份脚本、`SetGame` 48 个方法。激进开启自动重命名和
+“删除无效名称赋值”时只剩 28 个方法,说明那份输出发生了误删。优先选择
+“结构完整但残留少量怪名字”的版本,不要选择“看起来最干净但方法丢失”的版本。
 
 ---
 

@@ -7,8 +7,9 @@
 | 想干什么 | 看这里 |
 | --- | --- |
 | 刚拿到一个 SWF,不知道能不能反编译 | [docs/02-SWF-混淆判断流程.md](docs/02-SWF-混淆判断流程.md) —— 5 分钟出结论 |
-| 确认没混淆,要重写成 H5 | [docs/01-反编译重写-尝试记录.md](docs/01-反编译重写-尝试记录.md) |
-| 混淆了,要上 Ruffle 壳 | 02 号文档末尾「决定上 Ruffle 之后」 + 参考 `flying-ninja-cat` 的成品 |
+| AS1/2 有混淆,想先抢救源码 | `tools/decompile-as2.sh` + [docs/01-反编译重写-尝试记录.md](docs/01-反编译重写-尝试记录.md) |
+| 要重写成纯 H5 | [h5/](h5/) —— 本作的可玩 Canvas 重制版 |
+| 确实无法还原,要上 Ruffle 壳 | 02 号文档末尾「决定上 Ruffle 之后」 |
 
 ## 环境
 
@@ -32,16 +33,23 @@ export PATH=/opt/homebrew/opt/openjdk/bin:$PATH
 | `ruffle-selfhosted/` | Ruffle 0.4.1 自托管构建(js + 两份 wasm) |
 | `swfhead.py` | 读文件头:舞台尺寸、帧率、帧数、AS2/AS3、压缩方式 |
 | `swftags.py` | tag 层 `list` / `strip`,用于看结构、剥离 DoAction 做对照实验 |
+| `swfmanifest.py` | 列出 ExportAssets、MovieClip 帧数和帧标签,用于把类名映射回素材 |
+| `decompile-as2.sh` | 用本作验证过的保守参数反编译带混淆的 AS1/2 |
 | `strip-score-upload.py` | 等长常量替换,摘掉 SWF 里的成绩联网上报 |
 
 ## 已完成
 
-**飞天忍者猫** —— 五项混淆信号全中(控制流打散 + 标识符替换 + 常量池投毒 + 非法 tag),
-放弃重写,改用自托管 Ruffle 跑原版 SWF。成品在主站仓库
-`public/tools/flying-ninja-cat/`,已上「玩个 Go」。
+**飞天忍者猫** —— 五项混淆信号全中,但并非不能还原。JPEXS 的 AS1/2
+执行式反混淆在提高执行上限、关闭激进重命名和无效赋值删除后,成功恢复了
+152 份脚本。`SetGame.as` 的 48 个方法、地图、道具表、计分和绳索状态机均可读。
 
-联网上报双重掐断:SWF 层替换两处 `sendAndLoad`,播放器层
-`allowNetworking:'none'` + `openUrlMode:'deny'`。实测点「提交」零外部请求。
+纯 H5 重制版位于 [h5/](h5/),不含 SWF、Ruffle 或外部联网:
 
-素材导出在 `extract/ninja-cat/`(75 位图 / 110 矢量 / 1193 sprite / 20 音频),
-即使走 Ruffle 方案也能复用——卡片图标就是从 `images/100.png` 来的。
+```bash
+python3 -m http.server 4173
+```
+
+打开 `http://127.0.0.1:4173/h5/`。支持鼠标、触摸和空格键,最高分保存在
+浏览器本地。打包后的原版素材约 2.6 MB。
+
+Ruffle 版仍保留作逐帧行为参照;它不再是唯一方案。
