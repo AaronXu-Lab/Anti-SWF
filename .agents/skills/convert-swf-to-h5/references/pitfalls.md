@@ -42,6 +42,13 @@ only on copies under `temp/`.
 Search strings for `.swf` and inspect network 404s. A resource package may provide the title,
 preloader, fonts, or assets while the main timeline remains blank.
 
+### Relative loads may resolve against the wrapper page
+
+An AS2 `loadMovie("assets.swf")` can resolve against the embedding document rather than the
+main SWF URL in a Ruffle wrapper. Inspect the exact failed request. Set an explicit document
+`<base>` or player base URL to the original SWF directory; do not duplicate the resource beside
+the wrapper merely to silence the 404.
+
 ### A hidden browser tab can stop Ruffle from producing frames
 
 `document.hidden` may throttle `requestAnimationFrame`, leaving a black canvas. Temporarily
@@ -84,10 +91,38 @@ sprite or remove only the unwanted `PlaceObject` from a temporary SWF copy befor
 Nested timelines can duplicate frames or hold a child frame while the parent advances. Compare
 alpha bounds and pixels across the sequence, not just filenames and counts.
 
+### A stopped parent label may contain a playing child timeline
+
+AS2 commonly calls `gotoAndStop("run")` on a parent MovieClip while the child placed at that label
+continues playing. Exporting the parent's apparent frame range can duplicate stills, omit the last
+run frame, or truncate a longer spin cycle. Inspect the labeled frame's placed character, export
+that child directly, and preserve the child's own frame count and SWF-rate cadence.
+
+### Idle artwork and its pickup effect may be separate timelines
+
+Do not animate a static item merely because its nested child has multiple frames. In Flying Ninja
+Cat the coin stays still; after collection, `id_item` is replaced by a nine-frame sparkle sprite.
+Trace the attach/remove actions and export the nested effect as its own sequence.
+
 ### Transparent canvas size is not visible content size
 
 Record both PNG dimensions and alpha bounding boxes. Large transparent margins alter naive
 centering and can make an otherwise correct sprite appear consistently displaced.
+
+### A flattened composite is not a set of clean layers
+
+An exported progress bar may contain both the track and its initial moving marker. Cropping and
+redrawing transparent regions with normal source-over compositing does not erase the baked marker;
+transparent pixels leave the old artwork visible. Export the track and marker as separate child
+sprites, edit a clean track bitmap, or preserve the original composite. Do not synthesize layers
+from one flattened PNG unless the pixel result has been inspected.
+
+### Make user-edited bitmaps easy to hand off
+
+When a user will edit PNGs manually, preserve a canonical runtime asset, state its exact path,
+draw origin, scale, and any source crop, and centralize those numbers beside the manifest. Prefer
+direct whole-image drawing when practical. Version the bitmap URL after replacement so browser
+cache does not mask the edit.
 
 ## 4. Coordinates, registration, and collision
 
@@ -107,6 +142,37 @@ draw offset, and collision width as separate constants.
 The original used invisible clips such as `ground_pos` and `rope_pos`. Recover their matrices and
 shape bounds. Test positive hits and nearby misses. Never replace them with a convenient height
 threshold; doing so allowed ropes to attach in empty air.
+
+### Preserve the exact Flash `hitTest` overload
+
+`clip.hitTest(x, y, true)` performs shape-aware point testing, while
+`clip.hitTest(otherClip)` uses MovieClip bounds. Recover both transforms and implement the same
+overload semantics. Replacing either form with a convenient center/radius circle changes pickups
+near corners and edges even when the marker center is correct.
+
+### Recover named markers through the full matrix chain
+
+A marker such as `body.item_pos` may be nested inside several sprites. Read the SWF XML placement
+matrices for every parent, compose translation/rotation/scale in order, then convert twips to
+pixels. Check every gameplay state that swaps the body sprite. For Flying Ninja Cat, composing the
+run/jump matrices located the pickup marker near `(-19.5, -34)` relative to the player, disproving
+a convenient center-based collision guess.
+
+### Separate bad spawn data from bad pickup anchors
+
+If an item looks unreachable, compare its generated row/column against the original item table
+before expanding collision. Then validate the hidden pickup marker independently. Moving artwork
+or enlarging hit radii can hide one error while creating new false-positive pickups. Add one exact
+hit and one nearby miss for the recovered anchor, plus a deterministic fixture for the item row.
+
+### Exact item tables outrank plausible procedural patterns
+
+When the SWF contains an `ItemData` table, do not synthesize visually plausible arcs. Index every
+layout by its exact map-array signature, copy each block's raw codes, preserve type encodings such
+as `<100` versus `>=100`, and compute group bonuses from the same raw layout. Check special map
+sequences separately: a finish run may bypass the normal item generator and intentionally contain
+no items. Assert table count, map coverage, block alignment, one deterministic layout, and the
+special sequence in regression tests.
 
 ### The same anchor must feed initialization, drawing, and angle math
 
@@ -142,6 +208,21 @@ handle rejected play promises without breaking game initialization.
 Difficulty gates and random maps can make a bug appear fixed simply because the relevant block
 did not spawn. Seed randomness or create a direct simulation fixture that places the required
 blocks, items, and player state.
+
+### Similar motion can still have different rules
+
+Condition order, one-frame boundaries, easing functions, and delayed callbacks are gameplay data.
+For a death tween or rope swing, port the source statement order and timing before tuning by eye.
+Record any smoothing, clamping, elapsed-time cap, or alternate timer as a platform adaptation or
+unresolved approximation; do not present it as original logic.
+
+### Unbounded frame preloads can create random local failures
+
+Starting hundreds of `Image` loads in one `Promise.all` can produce intermittent
+`ERR_CONNECTION_RESET` failures on a simple local HTTP server. If the failed filename changes
+between fresh runs and direct reads return 200, limit the loader to a small worker pool instead of
+adding per-file exceptions. Re-test in at least two fresh browser contexts; a warm cache can hide
+the race.
 
 ## 6. Testing and repository hygiene
 

@@ -55,6 +55,24 @@ Ruffle, or reverse-engineering tools.
 - Do not interpret heavy obfuscation as proof that native H5 is impossible. Run the
   conservative deobfuscation workflow and compare structural completeness first.
 
+### Port before inventing
+
+- Treat the original SWF as the behavioral specification. Before authoring logic, exhaust
+  recovered AS source, P-code, main and nested timeline actions, button actions, exported
+  symbols, placement matrices, hidden markers, and baseline runtime captures.
+- Maintain a provenance ledger for every gameplay rule and user-visible flow. Classify each
+  entry as `exact-port`, `equivalent-platform-adaptation`, `intentional-divergence`,
+  `unresolved-approximation`, or `omitted-original` and record the evidence and regression test.
+- Preserve original data, formulas, condition order, frame timing, easing, random-selection
+  rules, collision semantics, animation child-frame counts, sound triggers, and state
+  transitions. JavaScript structure may differ; observable rules may not.
+- Do not replace recoverable behavior with plausible procedural patterns, convenient hit
+  radii, hand-tuned motion, generic UI flows, or invented timing. If evidence is incomplete,
+  isolate the provisional behavior, label it as an approximation, and do not call it restored.
+- Add browser-only behavior only when the platform requires it or the user requests it. Keep
+  the original rule underneath the adapter when possible and document every intentional change.
+- Audit the finished H5 method-by-method against the provenance ledger before claiming fidelity.
+
 ### Build from data and state
 
 - Extract data tables before rendering code: maps, item layouts, scores, difficulty,

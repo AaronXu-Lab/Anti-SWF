@@ -184,6 +184,27 @@ Before drawing the game, extract a behavioral specification:
 Use named MovieClip markers and placement matrices as authoritative coordinates. Convert all
 twips explicitly. Keep a table mapping original names to H5 names.
 
+### Logic provenance ledger
+
+Create the ledger before implementing gameplay and keep it current:
+
+| H5 area | Original behavior | Evidence | Status | Regression |
+| --- | --- | --- | --- | --- |
+| `updateJump` | `SetGame.gJump_EnterFrame` | AS source + runtime trace | `exact-port` | arc fixture |
+
+Use only these statuses:
+
+- `exact-port`: values, boundary semantics, condition order, and timing are supported by source;
+- `equivalent-platform-adaptation`: the browser mechanism differs but observable rules match;
+- `intentional-divergence`: the user or standalone-runtime requirements explicitly changed it;
+- `unresolved-approximation`: evidence is incomplete or the current behavior is hand-tuned;
+- `omitted-original`: an original feature is not present.
+
+For every H5 gameplay method, constant group, input path, timer, sound trigger, persistence path,
+and visible state transition, name the original method, timeline, button action, tag geometry, or
+runtime capture that supports it. A screenshot resemblance is not enough to mark `exact-port`.
+Keep unresolved entries visible in the game README or a durable audit under `docs/`.
+
 ## 8. Asset preparation
 
 For every runtime asset:
@@ -216,13 +237,15 @@ h5/<game>/
 Implementation order:
 
 1. Create a DOM-independent simulation module or class.
-2. Port data tables and constants.
-3. Implement explicit state transitions.
-4. Add collision using original marker geometry.
-5. Add deterministic tests for state and collision.
-6. Add Canvas/WebGL rendering with verified registration offsets.
-7. Add input, audio, persistence, responsive scaling, and UI.
-8. Remove or localize remote features.
+2. Port data tables, constants, and random-selection rules without synthesizing replacements.
+3. Port state transitions in the original condition order, including frame boundaries, timers,
+   delays, and easing.
+4. Add collision with the same Flash `hitTest` overload semantics and original marker geometry.
+5. Export the actual animated child timelines and preserve their independent frame counts/rates.
+6. Add deterministic tests for state, timing, collision hits, and nearby misses.
+7. Add Canvas/WebGL rendering with verified registration offsets.
+8. Add input, audio, persistence, responsive scaling, and UI as explicit platform adapters.
+9. Remove or localize remote features and record the resulting intentional divergences.
 
 Use a fixed-step accumulator at the SWF frame rate. Make random selection injectable or
 seedable for tests. Expose a small debug snapshot containing build version, state, player,
@@ -242,6 +265,10 @@ Compare original and H5 at the same logical states, not only on the title screen
 Build a failing regression test before fixing a fidelity bug whenever a correct seam exists.
 For visual bugs, capture the actual canvas and compare coordinates or pixels; a state-only test
 cannot catch a draw-anchor mismatch.
+
+Re-audit the provenance ledger after differential validation. Downgrade any entry that only looks
+similar but differs in condition order, timing, collision overload, child animation, or sound
+trigger. Do not close an `unresolved-approximation` by silently accepting the H5 behavior.
 
 ## 11. Delivery and cleanup
 
