@@ -13,17 +13,22 @@ const indexSource = fs.readFileSync(indexPath, "utf8");
 const source =
   fs.readFileSync(gamePath, "utf8").split("\nfunction drawLoading")[0] +
   "\nglobalThis.TestGame = FlyingNinjaCat;" +
-  "\nglobalThis.TestData = { SAFE_PATTERNS, FINISH_PATTERN, LEVEL_PATTERNS, ITEM_PATTERNS_BY_MAP, EFFECT_FRAME_COUNTS, EFFECT_DIRECTORIES, FADE_ALPHA, CAT_CLIP_FRAME_COUNTS, CAT_CLIP_DRAW, ITEM_MARKER_TRANSFORMS, ITEM_MOVIE_BOUNDS, DEATH_DELAY_FRAMES, DEATH_TWEEN_FRAMES, DEATH_DISTANCE };";
+  "\nglobalThis.TestData = { SAFE_PATTERNS, FINISH_PATTERN, LEVEL_PATTERNS, ITEM_PATTERNS_BY_MAP, EFFECT_FRAME_COUNTS, EFFECT_DIRECTORIES, FADE_ALPHA, CAT_CLIP_FRAME_COUNTS, CAT_CLIP_DRAW, ITEM_MARKER_TRANSFORMS, ITEM_MOVIE_BOUNDS, DEATH_DELAY_FRAMES, DEATH_TWEEN_FRAMES, DEATH_DISTANCE, CANVAS_WIDTH, CANVAS_HEIGHT, VIEW_SCALE, VIEW_OFFSET_X, VIEW_OFFSET_Y, WORLD_VISIBLE_RIGHT, WORLD_SPAWN_X, INITIAL_BLOCK_COUNT, GROUND_MARKER_TOP, GROUND_MARKER_BOTTOM };";
 const drawCalls = [];
+const fillRects = [];
 const rotations = [];
 const translations = [];
 const scales = [];
+const transforms = [];
 const textCalls = [];
 const context = new Proxy(
   {
     imageSmoothingEnabled: true,
     drawImage(...args) {
       drawCalls.push(args);
+    },
+    fillRect(...args) {
+      fillRects.push(args);
     },
     rotate(angle) {
       rotations.push(angle);
@@ -33,6 +38,9 @@ const context = new Proxy(
     },
     scale(...args) {
       scales.push(args);
+    },
+    setTransform(...args) {
+      transforms.push(args);
     },
     strokeText(...args) {
       textCalls.push(args);
@@ -90,9 +98,10 @@ assert.match(
 );
 assert.match(
   styleSource,
-  /\.game-shell:fullscreen[\s\S]*aspect-ratio:\s*4\s*\/\s*3/,
-  "fullscreen mode should retain the 4:3 game aspect ratio",
+  /\.game-shell:fullscreen[\s\S]*aspect-ratio:\s*16\s*\/\s*9/,
+  "fullscreen mode should retain the 16:9 game aspect ratio",
 );
+assert.match(indexSource, /width="960"[\s\S]*height="540"/, "canvas should use a 16:9 backing store");
 assert.match(
   indexSource,
   /apple-mobile-web-app-capable" content="yes"/,
@@ -118,6 +127,17 @@ assert.equal(
   "hide",
   "mobile fullscreen should ask the browser to hide navigation UI",
 );
+
+canvas.getBoundingClientRect = () => ({ left: 10, top: 20, width: 960, height: 540 });
+const viewportGame = Object.create(sandbox.TestGame.prototype);
+const logicalOrigin = viewportGame.canvasPoint({ clientX: 130, clientY: 20 });
+assert.equal(logicalOrigin.x, 0, "the left edge of the centered viewport should map to logical x=0");
+assert.equal(logicalOrigin.y, 0, "the top edge of the canvas should map to logical y=0");
+const logicalCenter = viewportGame.canvasPoint({ clientX: 490, clientY: 290 });
+assert.equal(logicalCenter.x, 320, "the 16:9 canvas center should map to logical x=320");
+assert.equal(logicalCenter.y, 240, "the 16:9 canvas center should map to logical y=240");
+assert.equal(sandbox.TestData.VIEW_SCALE, 1.125, "the 640x480 stage should scale to 720x540");
+assert.equal(sandbox.TestData.VIEW_OFFSET_X, 120, "the logical stage should have 120px side extensions");
 
 const effectDimensions = {
   bonus: [490, 130],
@@ -219,6 +239,8 @@ game.setStatus = () => {};
 
 game.startGame();
 assert.equal(game.state, "playing", "start should enter play without a Ready/Go transition");
+assert.equal(game.blocks.length, 7, "the 16:9 view should preload one additional safe roof");
+assert.equal(game.blocks.at(-1).x, 900, "the final initial roof should cover the wider lookahead");
 assert.equal(game.player.status, "run", "the cat should run immediately after starting");
 assert.equal(game.player.clip, "run", "run should select the original six-frame child timeline");
 assert.equal(game.catFrame(), 1, "a newly selected child timeline should begin on frame one");
@@ -354,6 +376,22 @@ worldGame.speed = 8;
 worldGame.moveWorld();
 assert.equal(worldGame.cloudX, -1, "clouds should wrap at the original 832px seam");
 
+const preloadGame = Object.create(sandbox.TestGame.prototype);
+preloadGame.blocks = [];
+preloadGame.items = [];
+preloadGame.mapQueue = [{ type: 2, codes: [], groupId: 1 }];
+preloadGame.nextWay = 135;
+preloadGame.speed = 15;
+preloadGame.cloudX = 0;
+preloadGame.count = 0;
+preloadGame.level = 0;
+preloadGame.moveWorld();
+assert.equal(preloadGame.blocks[0].x, 900, "new roofs should spawn one full block beyond the old boundary");
+assert.ok(
+  preloadGame.blocks[0].x - 127.5 > sandbox.TestData.WORLD_VISIBLE_RIGHT,
+  "a new roof texture should be fully outside the 16:9 canvas before scrolling into view",
+);
+
 const spinFallGame = Object.create(sandbox.TestGame.prototype);
 spinFallGame.player = {
   x: 200,
@@ -370,6 +408,63 @@ assert.equal(
   spinFallGame.player.clip,
   "spin",
   "changing gameplay status must not replace the still-playing spin child timeline",
+);
+
+assert.ok(
+  Math.abs(sandbox.TestData.GROUND_MARKER_TOP - 353.3) < 1e-9,
+  "ground marker top should retain the block y and SWF twip offset",
+);
+assert.ok(
+  Math.abs(sandbox.TestData.GROUND_MARKER_BOTTOM - 403.3) < 1e-9,
+  "ground marker should retain its original 50px depth",
+);
+
+function makeFallingGroundGame(y, dy = -5) {
+  const fallingGame = Object.create(sandbox.TestGame.prototype);
+  fallingGame.blocks = [{ type: 2, x: 200 }];
+  fallingGame.player = {
+    x: 200,
+    y,
+    dy,
+    status: "jump",
+    clip: "jump",
+    animationTick: 0,
+    rotation: 0,
+    rope: null,
+  };
+  fallingGame.sound = { play() {}, stop() {} };
+  fallingGame.setStatus = () => {};
+  return fallingGame;
+}
+
+const markerLandingGame = makeFallingGroundGame(397);
+markerLandingGame.startShoot();
+markerLandingGame.updateAirborne(0);
+assert.equal(
+  markerLandingGame.player.status,
+  "run",
+  "a falling shot still lands while the player point is inside ground_pos",
+);
+assert.equal(markerLandingGame.player.y, 365, "a valid ground_pos hit should restore ground y");
+
+const pitShotGame = makeFallingGroundGame(415);
+pitShotGame.startShoot();
+pitShotGame.updateAirborne(0);
+assert.equal(
+  pitShotGame.player.status,
+  "shoot",
+  "shooting below ground_pos must not pull a falling cat back onto a later roof",
+);
+assert.equal(pitShotGame.player.y, 420, "a missed ground marker should keep falling");
+assert.ok(pitShotGame.player.rope, "the shot itself should remain available after the ground miss");
+
+const edgeMissGame = makeFallingGroundGame(380);
+edgeMissGame.player.x = 300.01;
+edgeMissGame.updateAirborne(0);
+assert.equal(
+  edgeMissGame.player.status,
+  "jump",
+  "a falling point just beyond the original 100px ground edge should miss",
 );
 
 const resultGame = Object.create(sandbox.TestGame.prototype);
@@ -673,8 +768,12 @@ assert.equal(drawCalls[0][1], 8, "HUD coin should use the original inset");
 assert.equal(textCalls[0][1], 58, "HUD score should not overlap the coin");
 
 drawCalls.length = 0;
+fillRects.length = 0;
+transforms.length = 0;
 game.drawGameOver();
 assert.equal(drawCalls.length, 2, "result screen should only draw its main panel and replay button");
+assert.deepEqual(transforms[0], [1, 0, 0, 1, 0, 0], "result dimmer should switch to canvas coordinates");
+assert.deepEqual(fillRects[0], [0, 0, 960, 540], "result dimmer should cover the full 16:9 canvas");
 assert.deepEqual(
   drawCalls.map((call) => [call[1], call[2], call[3], call[4]]),
   [
